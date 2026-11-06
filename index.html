@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>พี่ฮูก - ผู้ช่วยจดบัญชีและเลขาจัดการงาน ใน LINE</title>
+  <meta name="description" content="พี่ฮูก LINE Bot สมุดบัญชีและผู้ช่วยการเงินส่วนตัวในแชท LINE พิมพ์ข้อความ ส่งสลิป หรือพูดบอก บอทจดและสรุปให้อัตโนมัติ ไม่ต้องโหลดแอปเพิ่ม">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico?v=3" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
+  <link rel="shortcut icon" href="/favicon.ico?v=3">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
+  
+  <!-- Google Fonts: Kanit & Sarabun -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css?v=13">
+  <link rel="stylesheet" href="theme-v2.css?v=4">
+  <script>document.documentElement.classList.add('js-motion');</script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar" aria-label="Announcement">
+    <div class="container announcement-inner">
+      <span class="badge-pill">โปรเปิดตัวพิเศษ 🚀</span>
+      <span>ลดสูงสุด <strong>40%</strong> ถึง 31 ธ.ค. 2569 พร้อมทดลองใช้ Pro & Elite ฟรี 7 วัน!</span>
+      <a href="#pricing" class="announcement-link">ดูราคาพิเศษ &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="กลับสู่หน้าแรก พี่ฮูก">
+        <img src="brand/logo.png?v=2" alt="โลโก้พี่ฮูก P'Hook" class="brand-icon" width="40" height="40">
+        <div class="brand-text">
+          <span class="brand-name">พี่ฮูก</span>
+          <span class="brand-sub">P'Hook LINE Bot</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="เมนูหลัก">
+        <a href="#simulator" class="nav-item">ลองพิมพ์แชท</a>
+        <a href="#features" class="nav-item">ฟีเจอร์เด่น</a>
+        <a href="#webapp" class="nav-item">หน้าแอป (LIFF)</a>
+        <a href="#personas" class="nav-item">นิสัยพี่ฮูก</a>
+        <a href="#commands" class="nav-item">คลังคำสั่ง</a>
+        <a href="#pricing" class="nav-item">แพ็กเกจ</a>
+        <a href="#faq" class="nav-item">คำถามที่พบบ่อย</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline btn-sm open-qr-btn" data-action="qr">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM14 14h3v3h-3zM17 17h4v4h-4zM14 20h3v1h-3zM19 14h2v3h-2z"/></svg>
+          สแกน QR
+        </button>
+        <a href="https://line.me/R/ti/p/@p-hook" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm btn-line">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.92 2 10.75c0 2.92 1.63 5.53 4.16 7.08-.18.66-.66 2.4-0.76 2.78-.12.48.17.47.37.34.26-.17 2.87-1.92 4.04-2.73.7.1 1.43.16 2.19.16 5.52 0 10-3.92 10-8.75S17.52 2 12 2zm1.09 11.23h-2.18v-4.9h2.18v4.9zm4.27 0h-2.18v-4.9h2.18v4.9zm-8.54 0H6.64v-4.9h2.18v4.9z"/></svg>
+          แอดไลน์เริ่มใช้ฟรี
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="เปิดเมนูมือถือ">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section stack mat" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span>ไม่ต้องโหลดแอปใหม่ แค่แอดไลน์ก็เริ่มได้ทันที</span>
+          </div>
+          
+          <h1 class="hero-title">
+            <span class="h-line">จดบัญชีและจัดการงาน</span>
+            <span class="h-line h-accent">ในแชท LINE</span>
+            <span class="h-line h-soft">ที่เข้าใจคุณที่สุด</span>
+          </h1>
+          
+          <p class="hero-desc">
+            พิมพ์ <em>"กาแฟ 30"</em>, ถ่ายรูปสลิป, หรือส่งเสียงพูด พี่ฮูกจดและจัดหมวดให้อัตโนมัติ 
+            พร้อมสรุปยอด กราฟวิเคราะห์ ตั้งงบเตือนสติ และหารบิลกลุ่มใน LINE ได้ครบจบในที่เดียว
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="https://line.me/R/ti/p/@p-hook" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-line shadow-hover">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.92 2 10.75c0 2.92 1.63 5.53 4.16 7.08-.18.66-.66 2.4-0.76 2.78-.12.48.17.47.37.34.26-.17 2.87-1.92 4.04-2.73.7.1 1.43.16 2.19.16 5.52 0 10-3.92 10-8.75S17.52 2 12 2z"/></svg>
+              เพิ่มเพื่อนใน LINE (@p-hook)
+            </a>
+            <a href="#simulator" class="btn btn-secondary btn-lg shadow-hover">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              ลองเล่นในแชทจำลอง
+            </a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="trust-item">
+              <span class="trust-icon">✨</span>
+              <span>ใช้งานฟรีตลอดไป</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-icon">🔒</span>
+              <span>ปลอดภัยตาม PDPA</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-icon">🧾</span>
+              <span>อ่านสลิป & เสียง</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-icon">👥</span>
+              <span>ใช้ในกลุ่ม & คู่รัก</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Interactive Preview Graphic -->
+        <div class="hero-visual">
+          <div class="iphone hero-phone"><i class="hw hw-action"></i><i class="hw hw-up"></i><i class="hw hw-down"></i><i class="hw hw-power"></i><div class="iphone-screen"><div class="statusbar sb-dark"><span class="sb-time">9:41</span><span class="sb-island"><i class="sb-cam"></i></span><span class="sb-icons"><svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx=".8"/><rect x="4.5" y="5" width="3" height="6" rx=".8"/><rect x="9" y="2.5" width="3" height="8.5" rx=".8"/><rect x="13.5" y="0" width="3" height="11" rx=".8"/></svg><svg width="16" height="11" viewBox="0 0 16 11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M1 4a10 10 0 0 1 14 0"/><path d="M3.6 6.6a6.2 6.2 0 0 1 8.8 0"/><circle cx="8" cy="9.4" r="1" fill="currentColor" stroke="none"/></svg><svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x=".6" y=".6" width="22" height="10.8" rx="3.2" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="19" height="8" rx="2" fill="currentColor"/><path d="M24.2 4v4c.8-.3 1.4-1.1 1.4-2s-.6-1.7-1.4-2z" fill="currentColor" opacity=".5"/></svg></span></div>
+            <div class="phone-header">
+              <div class="line-chat-info">
+                <img src="brand/logo.png?v=2" alt="พี่ฮูก" class="chat-avatar">
+                <div>
+                  <div class="chat-name">พี่ฮูก P'Hook <span class="verified-badge">✓</span></div>
+                  <div class="chat-status">ผู้ช่วยการเงินส่วนตัว</div>
+                </div>
+              </div>
+              <div class="chat-menu-icons">⋯</div>
+            </div>
+            
+            <div class="phone-body hero-chat-flow">
+              <div class="chat-date-pill">วันนี้</div>
+              
+              <!-- Message 1 -->
+              <div class="chat-bubble user-bubble animate-pop" style="animation-delay: 0.2s">
+                ข้าวหมูกรอบ 65, ชานม 45
+                <span class="msg-time">12:30</span>
+              </div>
+
+              <!-- Message 2 -->
+              <div class="bot-msg-group animate-pop" style="animation-delay: 0.6s">
+                <img src="brand/logo.png?v=2" alt="พี่ฮูก" class="bot-avatar-sm">
+                <div class="bot-card-preview">
+                  <img src="cards-clean/confirm-message-2.png" alt="จดรายการสำเร็จ" class="card-img-fit">
+                </div>
+              </div>
+
+              <!-- Message 3 -->
+              <div class="chat-bubble user-bubble animate-pop" style="animation-delay: 1.0s">
+                สรุปเดือนนี้
+                <span class="msg-time">12:31</span>
+              </div>
+
+              <!-- Message 4 -->
+              <div class="bot-msg-group animate-pop" style="animation-delay: 1.4s">
+                <img src="brand/logo.png?v=2" alt="พี่ฮูก" class="bot-avatar-sm">
+                <div class="bot-card-preview">
+                  <img src="cards-clean/summary-card-1.png" alt="การ์ดสรุปยอด" class="card-img-fit">
+                </div>
+              </div>
+            </div>
+
+            <div class="phone-footer-mock">
+              <span class="mock-input">พิมพ์ข้อความถึงพี่ฮูก...</span>
+              <span class="mock-send">➤</span>
+            </div>
+            <div class="home-bar"><i></i></div>
+          </div></div>
+          
+          <div class="scrap" style="--depth:14;top:9%;left:-4%;--rot:-4deg;background:#FFF6C9">☕ กาแฟ 30</div>
+          <div class="scrap" style="--depth:-10;top:30%;right:-8%;--rot:3deg;background:#D9F7EC">💰 เงินเดือน +25,000</div>
+          <div class="scrap" style="--depth:8;top:52%;left:-12%;--rot:2deg;background:#FFE3E8">🍲 หารบิล หมูกระทะ</div>
+          <div class="scrap" style="--depth:-16;top:70%;right:-10%;--rot:-3deg;background:#E7E5FF">⏰ 2 ทุ่ม กินยา</div>
+          <div class="scrap" style="--depth:11;top:86%;left:-2%;--rot:-2deg;background:#E0F2FE">🧾 ค่าไฟ 1,250</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Interactive "#tell" LINE Chat Simulator (Inspired by abdul-ai.com/#tell) -->
+    <section class="simulator-section stack sheet sheet--white" id="simulator">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Interactive Simulator</span>
+          <h2 class="section-title">ลองคุยกับพี่ฮูกได้เลย<br><span class="h-soft">ไม่ต้องรอแอดไลน์</span></h2>
+          <p class="section-subtitle">
+            กดเลือกคำสั่งยอดนิยมด้านล่าง หรือลองพิมพ์ข้อความในช่องแชทเพื่อสัมผัสประสบการณ์จริง
+          </p>
+        </div>
+
+        <div class="simulator-wrapper">
+          <!-- Command Prompt Chips -->
+          <div class="sim-presets">
+            <div class="presets-label">💡 คำสั่งยอดนิยม (คลิกเพื่อทดลอง):</div>
+            <div class="preset-chips" id="presetChips">
+              <button class="chip active" data-cmd="กาแฟ 30">☕ กาแฟ 30</button>
+              <button class="chip" data-cmd="น้ำ 50">🥤 น้ำ 50</button>
+              <button class="chip" data-cmd="เงินเดือน 25000">💰 เงินเดือน 25000</button>
+              <button class="chip" data-cmd="สรุปเดือนนี้">📊 สรุปเดือนนี้</button>
+              <button class="chip" data-cmd="ส่งรูปสลิป">🧾 ส่งรูปสลิป</button>
+              <button class="chip" data-cmd="หารบิล หมูกระทะ 1200">🍲 หารบิล หมูกระทะ 1200</button>
+              <button class="chip" data-cmd="เตือน พรุ่งนี้ 9 โมง จ่ายค่าไฟ">⏰ เตือน จ่ายค่าไฟ</button>
+              <button class="chip" data-cmd="ฮูก เดือนนี้ใช้ไปเท่าไร">🤖 ถาม AI: ใช้ไปเท่าไร</button>
+              <button class="chip" data-cmd="ส่งข้อความเสียง">🎙️ ส่งข้อความเสียง</button>
+              <button class="chip" data-cmd="ข้าว 50, กาแฟ 45">🍱 จดหลายรายการ</button>
+              <button class="chip" data-cmd="ลบล่าสุด">🗑️ ลบล่าสุด</button>
+              <button class="chip" data-cmd="ค้นหา กาแฟ">🔍 ค้นหา กาแฟ</button>
+              <button class="chip" data-cmd="สรุปทริป">🏖️ สรุปทริป เชียงใหม่</button>
+            </div>
+          </div>
+
+          <!-- Simulator Device Container -->
+          <div class="sim-device-container">
+            <div class="sim-phone iphone"><i class="hw hw-action"></i><i class="hw hw-up"></i><i class="hw hw-down"></i><i class="hw hw-power"></i><div class="iphone-screen"><div class="statusbar sb-dark"><span class="sb-time">9:41</span><span class="sb-island"><i class="sb-cam"></i></span><span class="sb-icons"><svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx=".8"/><rect x="4.5" y="5" width="3" height="6" rx=".8"/><rect x="9" y="2.5" width="3" height="8.5" rx=".8"/><rect x="13.5" y="0" width="3" height="11" rx=".8"/></svg><svg width="16" height="11" viewBox="0 0 16 11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M1 4a10 10 0 0 1 14 0"/><path d="M3.6 6.6a6.2 6.2 0 0 1 8.8 0"/><circle cx="8" cy="9.4" r="1" fill="currentColor" stroke="none"/></svg><svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x=".6" y=".6" width="22" height="10.8" rx="3.2" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="19" height="8" rx="2" fill="currentColor"/><path d="M24.2 4v4c.8-.3 1.4-1.1 1.4-2s-.6-1.7-1.4-2z" fill="currentColor" opacity=".5"/></svg></span></div>
+              <div class="sim-phone-header">
+                <div class="sim-header-left">
+                  <img src="brand/logo.png?v=2" alt="พี่ฮูก" class="sim-avatar">
+                  <div>
+                    <div class="sim-bot-title">พี่ฮูก (P'Hook) <span class="verified-badge">✓</span></div>
+                    <div class="sim-bot-subtitle">บอทการเงินส่วนตัว • ออนไลน์</div>
+                  </div>
+                </div>
+                <div class="sim-header-actions">
+                  <span class="sim-mode-badge" id="currentSimPersona">🌸 โหมดฮูกน้อยอบอุ่น</span>
+                </div>
+              </div>
+
+              <!-- Chat Message Scroll Area -->
+              <div class="sim-chat-area" id="simChatArea">
+                <div class="chat-date-pill">จำลองการใช้งานแชท LINE</div>
+                
+                <!-- Bot Welcome Bubble -->
+                <div class="sim-msg-row bot-row">
+                  <img src="brand/logo.png?v=2" class="sim-bot-icon" alt="พี่ฮูก">
+                  <div class="sim-bot-content">
+                    <div class="sim-bubble bot-bubble">
+                      สวัสดีครับ! พี่ฮูกพร้อมช่วยดูแลกระเป๋าตังค์และจัดระเบียบชีวิตให้คุณแล้วครับ ✨ 
+                      ลองแตะปุ่มคำสั่งด้านบน หรือพิมพ์บอกพี่ฮูกได้เลยนะ!
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Simulator Input Bar -->
+              <form class="sim-input-bar" id="simForm">
+                <button type="button" class="sim-btn-icon" id="simSlipBtn" title="จำลองส่งสลิป">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                </button>
+                <button type="button" class="sim-btn-icon" id="simMicBtn" title="จำลองส่งเสียง">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                </button>
+                <input type="text" id="simInput" class="sim-text-input" placeholder="พิมพ์ข้อความ เช่น 'กาแฟ 30' หรือ 'เตือน 9 โมง'..." autocomplete="off">
+                <button type="submit" class="sim-send-btn" id="simSendBtn" aria-label="ส่งข้อความ">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+              </form>
+              <div class="home-bar"><i></i></div>
+            </div></div>
+
+            <!-- Simulator Explanatory Card -->
+            <div class="sim-info-box">
+              <div class="sim-info-header">
+                <span class="info-badge">ทำไมผู้ใช้ถึงรักพี่ฮูก?</span>
+                <h3 id="simInfoTitle">จดไว ไม่เสียเวลา</h3>
+              </div>
+              <p id="simInfoDesc" class="sim-info-text">
+                ไม่ต้องเปิดแอปใหญ่ให้ยุ่งยาก แค่แชทใน LINE บอทอ่านภาษาธรรมชาติออกทันที ไม่ว่าจะเป็นชื่ออาหาร ยอดเงิน หมวดหมู่ หรือกระเป๋าเงิน
+              </p>
+              <div class="sim-info-features" id="simInfoHighlights">
+                <div class="highlight-item">
+                  <span class="check-icon">✓</span>
+                  <span>แยกหมวดหมู่อัตโนมัติ (อาหาร เดินทาง ช้อปปิ้ง บิล)</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="check-icon">✓</span>
+                  <span>แสดงการ์ด Flex Message พร้อมปุ่ม แก้ไข / ลบ ทันที</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="check-icon">✓</span>
+                  <span>แจ้งเตือนสถานะงบประมาณคงเหลือทุกครั้งที่จด</span>
+                </div>
+              </div>
+              
+              <div class="sim-info-action">
+                <a href="https://line.me/R/ti/p/@p-hook" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block btn-line">
+                  ชอบแบบนี้? แอดไลน์พี่ฮูกฟรีทันที
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: 6 Core Pillars (from features.md) -->
+    <section class="features-section stack sheet sheet--cream" id="features">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Core Features</span>
+          <h2 class="section-title">ฟังก์ชันครบ<br><span class="h-soft">จบทุกเรื่องเงินและงาน</span></h2>
+          <p class="section-subtitle">
+            ออกแบบมาเพื่อแก้ปัญหาการลืมจดเงิน การคุมงบไม่อยู่ และความวุ่นวายเวลาหารบิลกับเพื่อน
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper bg-mint-soft">
+              <span>✍️</span>
+            </div>
+            <div class="feature-badge plan-free">Free & Pro</div>
+            <h3 class="feature-title">จดง่ายหลายรูปแบบ</h3>
+            <p class="feature-text">
+              พิมพ์บอกสั้นๆ เช่น <code>กาแฟ 30</code> หรือส่งรูปสลิปโอนเงิน ส่งข้อความเสียง หรือส่ง PDF บิล/สเตทเมนต์ บอทอ่านยอดให้อัตโนมัติ ตรวจสอบก่อนจดทุกครั้ง
+            </p>
+            <ul class="feature-list">
+              <li>จดย้อนหลัง & ติดแท็ก <code>#ปาร์ตี้</code> (Pro)</li>
+              <li>อ่านรูปสลิป/ใบเสร็จ & สเตทเมนต์ PDF (Pro/Elite)</li>
+              <li>ส่งเสียงพูดแล้วจดให้ (Pro)</li>
+            </ul>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper bg-teal-soft">
+              <span>📊</span>
+            </div>
+            <div class="feature-badge plan-free">Free & Pro</div>
+            <h3 class="feature-title">สรุปและวิเคราะห์อัจฉริยะ</h3>
+            <p class="feature-text">
+              รู้ทันกระแสเงินสดด้วยคำสั่ง <code>สรุปวันนี้</code>, <code>สรุปเดือนนี้</code>, หรือ <code>เทียบเดือน</code> ดูสัดส่วนรายจ่ายแยกหมวด พร้อมกราฟวิเคราะห์ในแอป
+            </p>
+            <ul class="feature-list">
+              <li>สรุปรายสัปดาห์ / รายเดือน / รายปี (Pro)</li>
+              <li>ค้นหารายการพร้อมยอดรวม <code>ค้นหา ช้อปปิ้ง</code> (Pro)</li>
+              <li>AI พยากรณ์เงินปลายเดือน & วิเคราะห์พฤติกรรม (Elite)</li>
+            </ul>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper bg-emerald-soft">
+              <span>🎯</span>
+            </div>
+            <div class="feature-badge plan-pro">Pro & Elite</div>
+            <h3 class="feature-title">งบประมาณและกระปุกออม</h3>
+            <p class="feature-text">
+              คุมรายจ่ายอยู่หมัดด้วยการตั้งงบรวมรอบเดือน/สัปดาห์, งบรายหมวด และงบรายวัน พร้อมระบบเตือนสติเมื่อใช้แตะ 80% และเมื่อใช้เกินงบ
+            </p>
+            <ul class="feature-list">
+              <li>แนะนำสัดส่วนงบ 50-30-20 สุขภาพการเงินดี</li>
+              <li>สร้างกระปุกเป้าหมายออมเงิน พร้อมการ์ดฉลองเมื่อถึงเป้า</li>
+              <li>สร้างหมวดของฉัน กำหนดอีโมจิและคำค้นเองได้</li>
+            </ul>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper bg-sky-soft">
+              <span>💳</span>
+            </div>
+            <div class="feature-badge plan-pro">Pro & Elite</div>
+            <h3 class="feature-title">หลายกระเป๋า & กระเป๋าร่วม</h3>
+            <p class="feature-text">
+              แยกกระเป๋าเงินสด บัญชีธนาคาร บัตรเครดิต และ e-Wallet ได้ชัดเจน โอนเงินข้ามกระเป๋าได้ พร้อม <strong>กระเป๋าร่วม</strong> สำหรับแฟนและครอบครัว
+            </p>
+            <ul class="feature-list">
+              <li>บันทึกระบุบัตร/กระเป๋า เช่น <code>กาแฟ 45 @KTC</code></li>
+              <li>กระเป๋าร่วมแชร์กับแฟน 2 คน (Pro) หรือครอบครัว 10 คน (Elite)</li>
+              <li>คนถูกเชิญใช้แพ็กเกจ Free ก็เข้าร่วมกระเป๋าได้เลย</li>
+            </ul>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper bg-amber-soft">
+              <span>⏰</span>
+            </div>
+            <div class="feature-badge plan-free">Free & Pro</div>
+            <h3 class="feature-title">เตือน โน้ต ไฟล์ และปฏิทิน</h3>
+            <p class="feature-text">
+              ไม่พลาดทุกเรื่องสำคัญในชีวิต สั่งเตือนกินยา จ่ายค่าไฟ นัดประชุม พร้อมปุ่มซิงก์ตรงเข้า <strong>Google Calendar</strong> อัตโนมัติ
+            </p>
+            <ul class="feature-list">
+              <li>เตือนซ้ำรายวัน/สัปดาห์/เดือน <code>เตือน ทุกวัน 8 โมง กินยา</code></li>
+              <li>จดโน้ตสำคัญ ซ่อนเป็นความลับได้ <code>โน้ต รหัสไวไฟ 1234</code></li>
+              <li>ส่งไฟล์/รูปมาฝากไว้ ค้นหาและเปิดดูในคลังได้ตลอด</li>
+            </ul>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="feature-card highlight-card">
+            <div class="feature-icon-wrapper bg-rose-soft">
+              <span>👥</span>
+            </div>
+            <div class="feature-badge plan-elite">Elite Exclusive</div>
+            <h3 class="feature-title">สมุดกลุ่ม LINE & หารบิล</h3>
+            <p class="feature-text">
+              ชวนพี่ฮูกเข้ากลุ่ม LINE แล้วเปิดสมุดกลุ่ม ช่วยกันจดรายจ่ายในกลุ่ม สรุปทริปเที่ยว หารบิลพร้อม <strong>QR พร้อมเพย์รายคน</strong> และปุ่มตามเงิน!
+            </p>
+            <ul class="feature-list">
+              <li>หารบิลพร้อม QR พร้อมเพย์รายคน สะดวก ไม่ต้องคิดเลข</li>
+              <li>สรุปทริปคำนวณเงินชัดเจน ใครต้องโอนคืนใคร</li>
+              <li>เจ้าของสมุดเป็น Elite เพื่อนในกลุ่มใช้งานได้ทุกคนฟรี</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: LIFF Web App Showcase (from app-index.json) -->
+    <section class="webapp-section stack sheet sheet--mint" id="webapp">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">LIFF Mobile Web App</span>
+          <h2 class="section-title">เปิดหน้าแอปบนมือถือได้ทันที<br><span class="h-soft">ไม่ต้องติดตั้งอะไรเพิ่ม</span></h2>
+          <p class="section-subtitle">
+            เพียงแตะเมนูในแชท LINE ระบบจะเปิดหน้าเว็บ LIFF กราฟิกคมชัด ใช้งานง่าย เต็มประสิทธิภาพ
+          </p>
+        </div>
+
+        <div class="webapp-showcase">
+          <!-- Tabs Navigation -->
+          <div class="webapp-tabs" role="tablist">
+            <button class="webapp-tab active" data-screen="summary" role="tab">
+              <span class="tab-icon">📊</span>
+              <span>หน้าสรุปภาพรวม</span>
+            </button>
+            <button class="webapp-tab" data-screen="analytics" role="tab">
+              <span class="tab-icon">📈</span>
+              <span>วิเคราะห์กราฟ</span>
+            </button>
+            <button class="webapp-tab" data-screen="budgets" role="tab">
+              <span class="tab-icon">🎯</span>
+              <span>หมวดและงบประมาณ</span>
+            </button>
+            <button class="webapp-tab" data-screen="transactions" role="tab">
+              <span class="tab-icon">📑</span>
+              <span>หน้ารายการ & ค้นหา</span>
+            </button>
+            <button class="webapp-tab" data-screen="reminders" role="tab">
+              <span class="tab-icon">⏰</span>
+              <span>จัดการเตือน</span>
+            </button>
+          </div>
+
+          <!-- Tab Content Display -->
+          <div class="webapp-display">
+            <div class="webapp-phone-mockup iphone"><i class="hw hw-action"></i><i class="hw hw-up"></i><i class="hw hw-down"></i><i class="hw hw-power"></i>
+              <div class="iphone-screen mockup-bezel"><div class="statusbar sb-light"><span class="sb-time">9:41</span><span class="sb-island"><i class="sb-cam"></i></span><span class="sb-icons"><svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx=".8"/><rect x="4.5" y="5" width="3" height="6" rx=".8"/><rect x="9" y="2.5" width="3" height="8.5" rx=".8"/><rect x="13.5" y="0" width="3" height="11" rx=".8"/></svg><svg width="16" height="11" viewBox="0 0 16 11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M1 4a10 10 0 0 1 14 0"/><path d="M3.6 6.6a6.2 6.2 0 0 1 8.8 0"/><circle cx="8" cy="9.4" r="1" fill="currentColor" stroke="none"/></svg><svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x=".6" y=".6" width="22" height="10.8" rx="3.2" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="19" height="8" rx="2" fill="currentColor"/><path d="M24.2 4v4c.8-.3 1.4-1.1 1.4-2s-.6-1.7-1.4-2z" fill="currentColor" opacity=".5"/></svg></span></div>
+                <div class="app-scroll" id="appScroll"><img id="webappScreenImg" src="app/summary-overview.png" alt="หน้าสรุปภาพรวมในแอปเว็บ LIFF" class="app-screen-img"></div>
+                <div class="home-bar home-dark"><i></i></div>
+              </div>
+            </div>
+
+            <div class="webapp-detail-card">
+              <h3 id="webappTitle" class="webapp-detail-title">หน้าสรุป (Summary Overview)</h3>
+              <p id="webappDesc" class="webapp-detail-desc">
+                ดูยอดรายรับ-รายจ่ายสุทธิประจำเดือน พร้อมกราฟแท่งเปรียบเทียบ รายการล่าสุด และสถานะงบประมาณรวม ให้คุณรู้สถานการณ์เงินในพริบตา
+              </p>
+              
+              <div class="webapp-features-list" id="webappPoints">
+                <div class="webapp-point">
+                  <span class="point-bullet">✓</span>
+                  <span>แสดงยอดคงเหลือสุทธิและอัตราการใช้เงิน</span>
+                </div>
+                <div class="webapp-point">
+                  <span class="point-bullet">✓</span>
+                  <span>แตะเพื่อกรองดูเฉพาะรายรับหรือรายจ่ายได้ทันที</span>
+                </div>
+                <div class="webapp-point">
+                  <span class="point-bullet">✓</span>
+                  <span>ส่งออกข้อมูลเป็น CSV / Excel ได้ในคลิกเดียว</span>
+                </div>
+              </div>
+
+              <div class="webapp-cta">
+                <span class="liff-badge">⚡ โหลดไวผ่าน LINE LIFF ไม่เปลืองเมมโมรี่มือถือ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: 5 Bot Personas (from brand.json) -->
+    <section class="personas-section stack sheet sheet--cream" id="personas">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Personalization</span>
+          <h2 class="section-title">เลือกนิสัยพี่ฮูก<br><span class="h-soft">ให้เข้ากับสไตล์ของคุณ</span></h2>
+          <p class="section-subtitle">
+            ชอบให้บอทคุยน่ารัก ให้กำลังใจ หรือชอบฟีลเพื่อนสนิทด่าเตือนสติ? เลือกเปลี่ยนได้ตามใจ (แพ็กเกจ Pro ขึ้นไป)
+          </p>
+        </div>
+
+        <div class="personas-container">
+          <!-- Persona Selector Cards -->
+          <div class="personas-nav" id="personaNav">
+            <!-- Warm -->
+            <button class="persona-tab active" data-persona="warm">
+              <span class="persona-emoji">🌸</span>
+              <div class="persona-tab-info">
+                <strong>ฮูกน้อยอบอุ่น</strong>
+                <small>พูดจาน่ารัก สุภาพ ให้กำลังใจ</small>
+              </div>
+            </button>
+
+            <!-- Bestie -->
+            <button class="persona-tab" data-persona="bestie">
+              <span class="persona-emoji">🤝</span>
+              <div class="persona-tab-info">
+                <strong>ฮูกเพื่อนซี้</strong>
+                <small>ฟีลเพื่อนสนิท ชิลๆ แซะพอกรุบกริบ</small>
+              </div>
+            </button>
+
+            <!-- Spicy -->
+            <button class="persona-tab" data-persona="spicy">
+              <span class="persona-emoji">🌶️</span>
+              <div class="persona-tab-info">
+                <strong>ฮูกปากแจ๋ว</strong>
+                <small>กวนประสาทขั้นสุด ปั่นเก่ง ขยันเบรก</small>
+              </div>
+            </button>
+
+            <!-- Tea -->
+            <button class="persona-tab" data-persona="tea">
+              <span class="persona-emoji">🫖</span>
+              <div class="persona-tab-info">
+                <strong>นกฮูกจิบชา</strong>
+                <small>สุขุม ผู้ดี แต่แอบเหน็บให้สะดุ้ง</small>
+              </div>
+            </button>
+
+            <!-- Night -->
+            <button class="persona-tab" data-persona="night">
+              <span class="persona-emoji">🦉</span>
+              <div class="persona-tab-info">
+                <div class="persona-title-row">
+                  <strong>ฮูกนอนดึก</strong>
+                  <span class="badge-special">พิเศษ</span>
+                </div>
+                <small>ขยันเตือนคนนอนดึก ตาวาวทุกรายจ่าย</small>
+              </div>
+            </button>
+          </div>
+
+          <!-- Persona Live Preview -->
+          <div class="persona-preview-box">
+            <div class="persona-chat-stage">
+              <div class="stage-owl">
+                <img src="brand/logo.png?v=2" alt="พี่ฮูก" class="stage-owl-img" id="personaOwlImg">
+                <span class="stage-emoji-badge" id="personaEmojiBadge">🌸</span>
+              </div>
+              <div class="stage-dialogue">
+                <div class="dialogue-meta">
+                  <span class="dialogue-name" id="personaNameLabel">ฮูกน้อยอบอุ่น (โหมดเริ่มต้น)</span>
+                  <span class="dialogue-tag">ตัวอย่างคำตอบในแชท</span>
+                </div>
+                <blockquote class="dialogue-quote" id="personaQuote">
+                  "รับทราบครับคุณ santisook ไม่ต้องห่วงนะ พรุ่งนี้สู้ใหม่ พี่ฮูกคอยซัพพอร์ตเสมอครับ ✨"
+                </blockquote>
+                <div class="dialogue-desc" id="personaDesc">
+                  พูดจาน่ารัก สุภาพ ให้กำลังใจ ใส่ใจทุกเรื่องของคุณ ช่วยให้การจดเงินไม่เครียดและมีกำลังใจออม
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Command Cheatsheet / Explorer (from commands.json) -->
+    <section class="commands-section stack sheet sheet--white" id="commands">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Commands Library</span>
+          <h2 class="section-title">คลังคำสั่งในแชท<br><span class="h-soft">พิมพ์อะไรก็ได้ผลลัพธ์</span></h2>
+          <p class="section-subtitle">
+            ค้นหาตัวอย่างประโยคและคำสั่งที่ใช้พิมพ์คุยกับพี่ฮูกได้ทันที
+          </p>
+        </div>
+
+        <div class="commands-explorer">
+          <!-- Search & Filter Controls -->
+          <div class="explorer-controls">
+            <div class="search-input-wrapper">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="cmdSearchInput" placeholder="ค้นหาคำสั่ง เช่น กาแฟ, เงินเดือน, หาร, สรุป, เตือน, บัตร..." autocomplete="off">
+            </div>
+
+            <div class="category-pills" id="categoryPills">
+              <button class="cat-pill active" data-cat="all">ทั้งหมด</button>
+              <button class="cat-pill" data-cat="จดรายการ">จดรายการ</button>
+              <button class="cat-pill" data-cat="สรุปและค้นหา">สรุปและค้นหา</button>
+              <button class="cat-pill" data-cat="กระเป๋าและบัตร">กระเป๋าและบัตร</button>
+              <button class="cat-pill" data-cat="งบและเป้าหมาย">งบและเป้าหมาย</button>
+              <button class="cat-pill" data-cat="หนี้และบิล">หนี้และบิล</button>
+              <button class="cat-pill" data-cat="เตือน โน้ต ไฟล์">เตือน โน้ต ไฟล์</button>
+              <button class="cat-pill" data-cat="สมุดกลุ่ม (ใช้ในกลุ่ม LINE)">สมุดกลุ่ม</button>
+              <button class="cat-pill" data-cat="ถามพี่ฮูก">ถามพี่ฮูก</button>
+            </div>
+          </div>
+
+          <!-- Commands Grid / Table -->
+          <div class="commands-grid" id="commandsGrid">
+            <!-- Dynamically populated from commands.json -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Pricing & Plans (from plans.json & plans.md) -->
+    <section class="pricing-section stack sheet sheet--ink" id="pricing">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Pricing & Plans</span>
+          <h2 class="section-title">ราคาคุ้มค่า<br><span class="h-soft">เริ่มต้นใช้งานได้ฟรี</span></h2>
+          <p class="section-subtitle">
+            เริ่มต้นใช้งานฟรีตลอดไป หรือเลือกอัปเกรดเพื่อปลดล็อกฟังก์ชันขั้นสูง ทดลองฟรี 7 วัน
+          </p>
+
+          <!-- Billing Period Switcher -->
+          <div class="billing-toggle-wrapper">
+            <span class="billing-label" id="labelMonthly">รายเดือน</span>
+            <button class="billing-switch" id="billingSwitch" role="switch" aria-checked="true" aria-label="สลับรายเดือนหรือรายปี">
+              <span class="switch-handle"></span>
+            </button>
+            <span class="billing-label active" id="labelYearly">
+              รายปี <span class="discount-tag">ประหยัดสูงสุด 40% 🔥</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- 3 Pricing Cards -->
+        <div class="pricing-grid">
+          <!-- Free Plan -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <div class="plan-badge-pill">เริ่มต้นใช้งาน</div>
+              <h3 class="plan-name">Free</h3>
+              <p class="plan-tagline">สำหรับผู้เริ่มต้นจดบัญชีส่วนตัวในชีวิตประจำวัน</p>
+              <div class="plan-price">
+                <span class="currency">฿</span><span class="price-val">0</span>
+                <span class="period">/ ตลอดชีพ</span>
+              </div>
+            </div>
+
+            <ul class="plan-features">
+              <li><span class="check-icon">✓</span> จดรายการด้วยข้อความไม่จำกัด</li>
+              <li><span class="check-icon">✓</span> จัดหมวดหมู่อัตโนมัติ</li>
+              <li><span class="check-icon">✓</span> สรุปวันนี้ / เดือนนี้ / สรุปหมวด</li>
+              <li><span class="check-icon">✓</span> 1 กระเป๋าเงิน (เงินสด/หลัก)</li>
+              <li><span class="check-icon">✓</span> ตั้งเตือน, โน้ต, คลังไฟล์</li>
+              <li><span class="check-icon">✓</span> ทดลองส่งสลิป 3 รูป / สัปดาห์</li>
+              <li><span class="check-icon">✓</span> โควตาถามพี่ฮูก AI 200 ครั้ง / เดือน</li>
+              <li class="disabled-feature">✕ สแกนสลิปโอนเงินอัตโนมัติประจำ</li>
+              <li class="disabled-feature">✕ ตั้งงบประมาณ & เตือนเมื่อแตะ 80%</li>
+              <li class="disabled-feature">✕ สมุดกลุ่ม & หารบิลพร้อม QR</li>
+            </ul>
+
+            <a href="https://line.me/R/ti/p/@p-hook" class="btn btn-outline btn-block">
+              เริ่มใช้งานฟรี
+            </a>
+          </div>
+
+          <!-- Pro Plan (Featured) -->
+          <div class="pricing-card featured-plan">
+            <div class="popular-ribbon">แนะนำสำหรับทุกคน ✨</div>
+            <div class="pricing-header">
+              <div class="plan-badge-pill pill-featured">ยอดนิยม</div>
+              <h3 class="plan-name">Pro</h3>
+              <p class="plan-tagline">สำหรับคนที่ต้องการคุมการเงินอย่างจริงจังและแชร์กับแฟน</p>
+              
+              <div class="plan-price">
+                <span class="currency">฿</span>
+                <span class="price-val" id="proPrice">299</span>
+                <span class="period" id="proPeriod">/ ปี (เหลือ ฿25/ด)</span>
+              </div>
+              <div class="original-price-note" id="proOriginalPrice">
+                ราคาปกติ <del>฿339/ปี</del> • โปรเปิดตัวถึงสิ้นปีนี้
+              </div>
+              <div class="trial-note">🎁 ทดลองใช้ฟรี 7 วัน ยกเลิกได้ตลอด</div>
+            </div>
+
+            <ul class="plan-features">
+              <li><span class="check-icon">✓</span> <strong>ทุกอย่างใน Free และ:</strong></li>
+              <li><span class="check-icon">✓</span> <strong>อ่านรูปสลิป 30 ใบ / เดือน</strong></li>
+              <li><span class="check-icon">✓</span> <strong>จดด้วยเสียง 20 ครั้ง / เดือน</strong></li>
+              <li><span class="check-icon">✓</span> <strong>5 กระเป๋าเงิน</strong> (เงินสด, ธนาคาร, บัตร)</li>
+              <li><span class="check-icon">✓</span> <strong>กระเป๋าร่วม 2 คน</strong> (แชร์กับแฟนได้)</li>
+              <li><span class="check-icon">✓</span> ตั้งงบรวม, งบหมวด, งบวัน + เตือน 80%</li>
+              <li><span class="check-icon">✓</span> กราฟวิเคราะห์, เทียบเดือน, สรุปปี</li>
+              <li><span class="check-icon">✓</span> สร้าง 5 กระปุกเป้าหมายออมเงิน</li>
+              <li><span class="check-icon">✓</span> เปลี่ยนสีการ์ด 5 ธีม & นิสัยบอท 5 แบบ</li>
+              <li><span class="check-icon">✓</span> ส่งออกข้อมูล CSV / Excel</li>
+            </ul>
+
+            <a href="https://line.me/R/ti/p/@p-hook" class="btn btn-primary btn-block btn-line shadow-hover">
+              ทดลองใช้ Pro ฟรี 7 วัน
+            </a>
+          </div>
+
+          <!-- Elite Plan -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <div class="plan-badge-pill">สูงสุด ครบครัน</div>
+              <h3 class="plan-name">Elite</h3>
+              <p class="plan-tagline">สำหรับกลุ่มเพื่อน ครอบครัว ธุรกิจย่อม และผู้ใช้ขั้นสูง</p>
+              
+              <div class="plan-price">
+                <span class="currency">฿</span>
+                <span class="price-val" id="elitePrice">699</span>
+                <span class="period" id="elitePeriod">/ ปี (เหลือ ฿58/ด)</span>
+              </div>
+              <div class="original-price-note" id="eliteOriginalPrice">
+                ราคาปกติ <del>฿799/ปี</del> • โปรเปิดตัวถึงสิ้นปีนี้
+              </div>
+              <div class="trial-note">🎁 ทดลองใช้ฟรี 7 วัน ยกเลิกได้ตลอด</div>
+            </div>
+
+            <ul class="plan-features">
+              <li><span class="check-icon">✓</span> <strong>ทุกอย่างใน Pro และ:</strong></li>
+              <li><span class="check-icon">✓</span> <strong>สมุดกลุ่ม LINE</strong> (หารบิล QR, สรุปทริป, ตามเงิน)</li>
+              <li><span class="check-icon">✓</span> <strong>สแกนสลิปไม่จำกัด</strong> (ตามเกณฑ์ Fair Use 300)</li>
+              <li><span class="check-icon">✓</span> <strong>จดด้วยเสียง 200 ครั้ง / เดือน</strong></li>
+              <li><span class="check-icon">✓</span> AI แยกรายการสินค้าในสลิป/ใบเสร็จได้</li>
+              <li><span class="check-icon">✓</span> กระเป๋าเงินไม่จำกัด & กระเป๋าร่วม 10 คน</li>
+              <li><span class="check-icon">✓</span> จัดการหนี้รายคน & บิลเตือนชำระรายเดือน</li>
+              <li><span class="check-icon">✓</span> AI พยากรณ์เงินปลายเดือน & วิเคราะห์เชิงลึก</li>
+              <li><span class="check-icon">✓</span> โควตาถาม AI สูงสุด 5,000 ครั้ง / เดือน</li>
+              <li><span class="check-icon">✓</span> รองรับสกุลเงินต่างประเทศ <code>1500 JPY</code></li>
+            </ul>
+
+            <a href="https://line.me/R/ti/p/@p-hook" class="btn btn-outline btn-block">
+              ทดลองใช้ Elite ฟรี 7 วัน
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: FAQ (from faq.md) -->
+    <section class="faq-section stack sheet sheet--cream" id="faq">
+      <div class="container faq-container">
+        <div class="section-header text-center">
+          <span class="section-tag">FAQ</span>
+          <h2 class="section-title">คำถามที่พบบ่อย<small class="h-meta">· FAQ · Frequently Asked Questions</small></h2>
+          <p class="section-subtitle">
+            รวมคำตอบของข้อสงสัยยอดนิยมเกี่ยวกับพี่ฮูก
+          </p>
+        </div>
+
+        <div class="faq-accordion" id="faqAccordion">
+          <!-- Item 1 -->
+          <div class="faq-item active">
+            <button class="faq-question">
+              <span>พี่ฮูกคืออะไร?</span>
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>พี่ฮูกคือสมุดบัญชีและเลขาการเงินในแชท LINE เพียงพิมพ์ "กาแฟ 30" บอทจะจดและจัดหมวดหมู่ให้อัตโนมัติ พร้อมสรุปยอดและเปิดดูรายงานกราฟได้ทั้งในแชทและในแอปเว็บ (LIFF) บนมือถือโดยไม่ต้องติดตั้งแอปเพิ่ม</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>ต้องติดตั้งแอปไหม?</span>
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>ไม่ต้องติดตั้งเลยครับ เพียงแค่เพิ่มเพื่อนใน LINE (@p-hook) ก็เริ่มพิมพ์จดได้ทันที ส่วนหน้าแอปเว็บ (ดูสรุป กราฟ งบ เตือน ฯลฯ) สามารถแตะเปิดจากเมนูในแชทได้ทันที สะดวก รวดเร็ว และไม่เปลืองพื้นที่บนมือถือ</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>ใช้งานฟรีได้อะไรบ้าง?</span>
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>แผน Free สามารถจดรายการด้วยข้อความได้ไม่จำกัด จัดหมวดหมู่อัตโนมัติ สรุปวันนี้/เดือนนี้/หมวด แก้และลบรายการล่าสุด ตั้งเตือน โน้ต คลังไฟล์ ถามพี่ฮูก AI ได้ 200 ครั้งต่อเดือน และทดลองส่งสลิปได้ 3 รูปต่อสัปดาห์</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>ราคาเท่าไร และทดลองใช้งานได้ไหม?</span>
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>แพ็กเกจ Pro ราคาปกติ 59 บาท/เดือน (339 บาท/ปี) และ Elite 139 บาท/เดือน (799 บาท/ปี) ในช่วงเปิดตัวถึง 31 ธ.ค. 2569 มีโปรโมชันลดพิเศษเหลือ Pro 39/299 บาท และ Elite 119/699 บาท พร้อมสิทธิ์ทดลองใช้งานฟรี 7 วัน จ่ายสะดวกด้วยบัตรหรือพร้อมเพย์</p>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>พี่ฮูกอ่านสลิปและข้อความเสียงได้ไหม?</span>
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>อ่านได้ครับ เพียงส่งรูปสลิปโอนเงิน ใบเสร็จ ข้อความเสียง หรือไฟล์ PDF สเตทเมนต์ บอทจะทำการอ่านยอดและหมวดหมู่ พร้อมแสดงการ์ดสรุปให้คุณตรวจสอบและกดยืนยันก่อนบันทึกทุกครั้ง</p>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>ใช้ในกลุ่มเพื่อนหรือครอบครัวได้ไหม?</span>
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>ได้ครับ เพียงชวนพี่ฮูกเข้ากลุ่ม LINE โดยเจ้าของสมุดต้องเป็นแพ็กเกจ Elite ส่วนเพื่อนๆ ในกลุ่มสามารถใช้งานร่วมกันได้ฟรี มีฟีเจอร์หารบิลพร้อม QR พร้อมเพย์รายคน คำนวณสรุปทริป และปุ่มตามเงินคนที่ยังค้างชำระ</p>
+            </div>
+          </div>
+
+          <!-- Item 7 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>ใช้กับแฟนหรือครอบครัวร่วมกระเป๋าเดียวกันได้ไหม?</span>
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>ได้ครับ ด้วยฟีเจอร์ "กระเป๋าร่วม" (Shared Wallet) แผน Pro รองรับ 2 คน (เหมาะกับแฟนหรือคู่ชีวิต) และแผน Elite รองรับสูงสุด 10 คน ที่สำคัญคือคนที่ได้รับคำเชิญแม้ใช้แผน Free ก็สามารถเข้าร่วมกระเป๋าได้ทันที</p>
+            </div>
+          </div>
+
+          <!-- Item 8 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>ปรับแต่งบอทให้เข้ากับตัวเองได้ไหม?</span>
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>ได้ครับ (สำหรับแผน Pro ขึ้นไป) สามารถเลือกสีธีมการ์ดได้ 5 ธีม (เขียวมิ้นต์, ฟ้าทะเล, ชมพูพีช, ม่วงลาเวนเดอร์, ดำกลางคืน) ปรับนิสัยบอทได้ 5 สไตล์ (อบอุ่น, เพื่อนซี้, ปากแจ๋ว, จิบชา, นอนดึก) และตั้งชื่อเล่นที่คุณต้องการให้บอทเรียกได้</p>
+            </div>
+          </div>
+
+          <!-- Item 9 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>ข้อมูลมีความปลอดภัยแค่ไหน?</span>
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>พี่ฮูกปฏิบัติตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล (PDPA) อย่างเคร่งครัด ข้อความที่มีลักษณะเป็นรหัสผ่านหรือเลขบัญชี/บัตรจะไม่ถูกส่งให้ระบบ AI ข้อมูลไม่ถูกนำไปเทรนโมเดลภายนอก คุณสามารถส่งออกข้อมูลเป็น Excel หรือสั่งลบข้อมูลทั้งหมดของคุณได้เองตลอดเวลาที่หน้าตั้งค่า</p>
+            </div>
+          </div>
+
+          <!-- Item 10 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>AI ให้คำแนะนำเรื่องการลงทุนไหม?</span>
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>ไม่ครับ พี่ฮูกจะช่วยอธิบายแนวคิดการเงินทั่วไปและช่วยวางแผนจากข้อมูลตัวเลขรายรับ-รายจ่ายจริงของคุณ แต่จะไม่แนะนำหุ้น กองทุน คริปโต หรือผลิตภัณฑ์ธนาคาร/ประกันเฉพาะตัว และไม่มีการการันตีผลตอบแทนใดๆ</p>
+            </div>
+          </div>
+
+          <!-- Item 11 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>ชวนเพื่อนมาใช้แล้วได้อะไร?</span>
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>ทั้งคุณและเพื่อนที่ถูกชวนจะได้รับเหรียญสะสม ซึ่งสามารถนำไปแลกเป็นวันใช้งานแพ็กเกจ Pro ได้ฟรี ยิ่งชวนมาก ยิ่งได้ใช้ฟรีนานขึ้นครับ</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="support-bar" id="supportBar">
+          <div class="support-bar-info">
+            <span class="support-bar-icon">💬</span>
+            <div>
+              <strong>ยังมีคำถามอยู่? ทักทีมงานได้เลย</strong>
+              <small>LINE Support ทีมงานพี่ฮูก ตอบทุกวัน</small>
+            </div>
+          </div>
+          <a href="#" class="btn btn-primary btn-sm btn-line support-line-link" data-support-line target="_blank" rel="noopener noreferrer">แอด LINE Support</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Privacy & Security (from privacy-summary.md) -->
+    <section class="privacy-section stack sheet sheet--white" id="privacy">
+      <div class="container">
+        <div class="privacy-box">
+          <div class="privacy-badge">🔒 Privacy & PDPA First</div>
+          <h2 class="privacy-title">พี่ฮูกเห็นอะไร<br><span class="h-soft">เก็บข้อมูลอะไรบ้าง</span></h2>
+          <p class="privacy-subtitle">
+            เราให้ความสำคัญสูงสุดกับการปกป้องข้อมูลส่วนบุคคลและการเงินของคุณ
+          </p>
+
+          <div class="privacy-grid">
+            <div class="priv-col">
+              <h4>🛡️ ข้อมูลที่จัดเก็บ</h4>
+              <p>เก็บเฉพาะข้อมูลที่จำเป็นต่อการใช้งาน เช่น รหัส LINE, ชื่อ, รายการที่จด, งบประมาณ และไฟล์/สลิปที่คุณส่งมาให้ตรวจ ข้อมูลชื่อเล่นที่คุณตั้งจะไม่ถูกส่งให้ผู้ให้บริการ AI</p>
+            </div>
+            <div class="priv-col">
+              <h4>🤖 ความปลอดภัยด้าน AI</h4>
+              <p>ระบบตรวจจับและกรองรหัสผ่าน เลขบัตร และเลขบัญชีธนาคารไม่ให้ถูกส่งไปยัง AI ข้อมูลการเงินจะถูกประมวลผลเฉพาะตอนที่คุณถามเรื่องเงินของตัวเองเท่านั้น และไม่นำไปเทรนโมเดล</p>
+            </div>
+            <div class="priv-col">
+              <h4>⚖️ สิทธิ์ตามกฎหมาย PDPA</h4>
+              <p>คุณสามารถขอสำเนาข้อมูลโดยส่งออกเป็นไฟล์ CSV/Excel ได้ตลอดเวลา และสามารถสั่งลบประวัติและข้อมูลทั้งหมดของคุณอย่างถาวรได้ด้วยตัวเองที่หน้าตั้งค่า</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Final CTA -->
+    <section class="cta-section stack sheet sheet--mint" id="start">
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-content">
+            <span class="cta-tag">เริ่มต้นดูแลการเงินตั้งแต่วันนี้</span>
+            <h2 class="cta-title">เรื่องเงินเรื่องแรก<br><span class="h-soft">บอกพี่ฮูกวันนี้เลย</span></h2>
+            <p class="cta-text">
+              แอดไลน์พี่ฮูกตอนนี้ เริ่มใช้งานฟรีทันที ไม่ต้องกรอกบัตรเครดิต ไม่ต้องโหลดแอปเพิ่ม
+            </p>
+            <div class="cta-buttons">
+              <a href="https://line.me/R/ti/p/@p-hook" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-line shadow-hover">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.92 2 10.75c0 2.92 1.63 5.53 4.16 7.08-.18.66-.66 2.4-0.76 2.78-.12.48.17.47.37.34.26-.17 2.87-1.92 4.04-2.73.7.1 1.43.16 2.19.16 5.52 0 10-3.92 10-8.75S17.52 2 12 2z"/></svg>
+                เพิ่มเพื่อน LINE ฟรี (@p-hook)
+              </a>
+              <button class="btn btn-outline btn-lg open-qr-btn">
+                แสดง QR Code
+              </button>
+            </div>
+            <div class="cta-sub">
+              <span>🎁 ทดลองใช้ Pro & Elite ฟรี 7 วัน • ยกเลิกได้ตลอดเวลา</span>
+            </div>
+          </div>
+          <div class="cta-mascot">
+            <img src="brand/phook-invite.png" alt="พี่ฮูกชวนเพื่อน" class="cta-owl-img">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sticky Mobile Action Bar -->
+  <div class="mobile-sticky-bar" id="mobileStickyBar">
+    <div class="mobile-sticky-inner">
+      <div class="mobile-sticky-info">
+        <img src="brand/logo.png?v=2" alt="พี่ฮูก" width="32" height="32">
+        <div>
+          <strong>พี่ฮูก LINE Bot</strong>
+          <small>จดบัญชี คุมงบ ใน LINE</small>
+        </div>
+      </div>
+      <a href="https://line.me/R/ti/p/@p-hook" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm btn-line">
+        แอดไลน์เริ่มใช้ฟรี
+      </a>
+    </div>
+  </div>
+
+  <!-- QR Code Modal -->
+  <div class="modal-backdrop" id="qrModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" id="modalCloseBtn" aria-label="ปิดหน้าต่าง">&times;</button>
+      <div class="modal-body text-center">
+        <img src="brand/logo.png?v=2" alt="โลโก้พี่ฮูก" class="modal-logo">
+        <h3 class="modal-title">สแกน QR เพื่อเพิ่มเพื่อน</h3>
+        <p class="modal-desc">เปิดแอป LINE บนมือถือแล้วสแกน QR Code ด้านล่างเพื่อเริ่มคุยกับพี่ฮูก</p>
+        
+        <div class="qr-box">
+          <img class="qr-svg" src="brand/qr-p-hook.svg" alt="QR Code เพิ่มเพื่อน LINE @p-hook" width="200" height="200">
+        </div>
+
+        <div class="line-id-box">
+          <span>LINE ID: <strong>@p-hook</strong></span>
+          <button class="btn btn-sm btn-outline" id="copyIdBtn">คัดลอก ID</button>
+        </div>
+
+        <div class="modal-actions">
+          <a href="https://line.me/R/ti/p/@p-hook" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block btn-line">
+            เปิดแอป LINE เลย
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="brand/logo.png?v=2" alt="พี่ฮูก" width="36" height="36">
+          <span>พี่ฮูก (P'Hook)</span>
+        </div>
+        <p class="footer-tagline">
+          สมุดบัญชีและผู้ช่วยการเงินส่วนตัวใน LINE บันทึกง่าย คุมงบได้จริง ปลอดภัยตามมาตรฐานสากล
+        </p>
+        <div class="footer-palette">
+          <span class="color-dot dot-mint" title="เขียวมิ้นต์ (Default)"></span>
+          <span class="color-dot dot-ocean" title="ฟ้าทะเล"></span>
+          <span class="color-dot dot-rose" title="ชมพูพีช"></span>
+          <span class="color-dot dot-lavender" title="ม่วงลาเวนเดอร์"></span>
+          <span class="color-dot dot-night" title="ดำกลางคืน"></span>
+        </div>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>ฟังก์ชัน</h4>
+        <a href="#simulator">แชทจำลอง (#tell)</a>
+        <a href="#features">บันทึกรายรับ-รายจ่าย</a>
+        <a href="#features">สแกนสลิป & เสียง</a>
+        <a href="#features">สมุดกลุ่ม LINE & หารบิล</a>
+        <a href="#webapp">แอปเว็บ LIFF</a>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>ข้อมูล & แพ็กเกจ</h4>
+        <a href="#pricing">แผน Free / Pro / Elite</a>
+        <a href="#commands">คู่มือคำสั่งในแชท</a>
+        <a href="#personas">นิสัยบอท 5 แบบ</a>
+        <a href="#faq">คำถามที่พบบ่อย</a>
+        <a href="#privacy">ความเป็นส่วนตัว (PDPA)</a>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>ติดต่อเรา</h4>
+        <p>LINE Official: <a href="https://line.me/R/ti/p/@p-hook">@p-hook</a></p>
+        <p>LINE Support: <a href="#" class="support-line-link" data-support-line>เร็ว ๆ นี้</a></p>
+        <p>อีเมล: support@p-hook.com</p>
+        <p class="footer-note">เวอร์ชันอัปเดตล่าสุด 6 พ.ย. 2569</p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 P'Hook (พี่ฮูก) All rights reserved. ออกแบบด้วยโทนเขียวพาสเทลเพื่อสุขภาพการเงินที่สดใส</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="simulator.js?v=1"></script>
+  <script src="app.js?v=9"></script>
+  <script src="motion.js?v=1"></script>
+</body>
+</html>

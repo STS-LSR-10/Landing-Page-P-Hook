@@ -1,0 +1,167 @@
+[
+  {
+    "file": "app/summary-overview.png",
+    "title": "หน้าสรุป",
+    "description": "ยอดรายรับ-รายจ่าย กราฟ และรายการล่าสุด"
+  },
+  {
+    "file": "app/summary-goal.png",
+    "title": "หน้าสรุป (มีเป้าหมาย)",
+    "description": "รายละเอียดรอบงบและแถบเป้าหมาย"
+  },
+  {
+    "file": "app/analytics-charts.png",
+    "title": "หน้าวิเคราะห์",
+    "description": "กราฟรายรับ-รายจ่ายรายเดือน/สัปดาห์/วัน และสัดส่วนหมวด"
+  },
+  {
+    "file": "app/analytics-bars.png",
+    "title": "หน้าวิเคราะห์ (แท่งหมวด)",
+    "description": "แท่งแยกหมวดรายจ่าย"
+  },
+  {
+    "file": "app/budgets-categories.png",
+    "title": "หมวดและงบ",
+    "description": "งบรวม งบรายหมวด คำแนะนำงบ 50-30-20"
+  },
+  {
+    "file": "app/budgets-overall.png",
+    "title": "งบรวม",
+    "description": "ตั้งงบประจำเดือนและเตือนเมื่อใกล้เกิน"
+  },
+  {
+    "file": "app/daily-budget.png",
+    "title": "งบรายวัน",
+    "description": "ตั้งวงเงินต่อวัน (Pro)"
+  },
+  {
+    "file": "app/custom-categories.png",
+    "title": "หมวดของฉัน",
+    "description": "สร้างหมวดและอีโมจิเอง (Pro)"
+  },
+  {
+    "file": "app/transactions-groups.png",
+    "title": "หน้ารายการ (จัดกลุ่ม)",
+    "description": "ดูรายการแยกกลุ่มพร้อมยอดรวม"
+  },
+  {
+    "file": "app/transactions-search.png",
+    "title": "หน้ารายการ (ค้นหา)",
+    "description": "ค้นหา กรองช่วงวัน แท็ก หมวด พร้อมยอดรวม"
+  },
+  {
+    "file": "app/reminders-list.png",
+    "title": "หน้าเตือน",
+    "description": "รายการเตือนที่ตั้งไว้ ติ๊กเสร็จได้"
+  },
+  {
+    "file": "app/reminders-add.png",
+    "title": "เพิ่มเตือน",
+    "description": "ตั้งวัน เวลา หมวด และการทำซ้ำ"
+  },
+  {
+    "file": "app/reminders-filters.png",
+    "title": "กรองเตือน",
+    "description": "กรองตามสถานะและนับจำนวน"
+  },
+  {
+    "file": "app/reminders-calendar.png",
+    "title": "เพิ่มลงปฏิทิน",
+    "description": "ส่งเตือนเข้า Google Calendar หรือปฏิทินในเครื่อง"
+  },
+  {
+    "file": "app/bills.png",
+    "title": "บิลที่ต้องจ่าย",
+    "description": "บิลประจำ วันครบกำหนด จ่ายแล้วจดให้ (Elite)"
+  },
+  {
+    "file": "app/debts.png",
+    "title": "หนี้ที่ให้ยืม",
+    "description": "ยอดค้างรายคนและวันที่เกินกำหนด (Elite)"
+  },
+  {
+    "file": "app/goals.png",
+    "title": "เป้าหมายการออม",
+    "description": "กระปุกออมหลายใบ (Pro)"
+  },
+  {
+    "file": "app/goals-history.png",
+    "title": "ประวัติการหยอดกระปุก",
+    "description": "ประวัติและกราฟของเป้าหมาย"
+  },
+  {
+    "file": "app/wallets.png",
+    "title": "กระเป๋า",
+    "description": "กระเป๋าเงินสด ธนาคาร บัตร พร้อมยอด"
+  },
+  {
+    "file": "app/wallets-credit-card.png",
+    "title": "บัตรเครดิต",
+    "description": "วงเงินและรอบบิลสองรอบ (Pro)"
+  },
+  {
+    "file": "app/wallets-shared.png",
+    "title": "กระเป๋าร่วม",
+    "description": "ชวนแฟน/ครอบครัวใช้กระเป๋าร่วม"
+  },
+  {
+    "file": "app/vault-tabs.png",
+    "title": "คลัง",
+    "description": "โน้ตและไฟล์ที่ฝากไว้ แยกแท็บ"
+  },
+  {
+    "file": "app/vault-grid.png",
+    "title": "คลัง (ตาราง)",
+    "description": "ดูไฟล์เป็นรายการหรือตารางภาพ"
+  },
+  {
+    "file": "app/settings-all.png",
+    "title": "ตั้งค่า",
+    "description": "การแจ้งเตือน สกุลเงิน เขตเวลา ความเป็นส่วนตัว"
+  },
+  {
+    "file": "app/settings-personalize.png",
+    "title": "ธีมการ์ดและนิสัยพี่ฮูก",
+    "description": "เลือกสีการ์ด 5 ธีม และนิสัยบอท 5 แบบ (Pro)"
+  },
+  {
+    "file": "app/settings-call-name.png",
+    "title": "ชื่อที่ให้พี่ฮูกเรียก",
+    "description": "ตั้งชื่อเล่นให้บอทเรียก (Pro)"
+  },
+  {
+    "file": "app/quota.png",
+    "title": "โควตาการใช้งาน",
+    "description": "ใช้ไปเท่าไร เหลือเท่าไร แต่ละแพ็กเกจได้เท่าไร"
+  },
+  {
+    "file": "app/upgrade-plans.png",
+    "title": "อัปเกรด",
+    "description": "เทียบแพ็กเกจ Free/Pro/Elite"
+  },
+  {
+    "file": "app/upgrade-prices.png",
+    "title": "ราคา",
+    "description": "ราคาและช่วงทดลองฟรี"
+  },
+  {
+    "file": "app/invite.png",
+    "title": "ชวนเพื่อน",
+    "description": "รหัสชวน เหรียญสะสม 3 ขั้นตอน"
+  },
+  {
+    "file": "app/split-bill.png",
+    "title": "หารบิล",
+    "description": "เลือกคนหาร ส่วนแบ่งรายคน"
+  },
+  {
+    "file": "app/english.png",
+    "title": "ภาษาอังกฤษ",
+    "description": "สลับเป็นภาษาอังกฤษได้"
+  },
+  {
+    "file": "app/splash.png",
+    "title": "หน้าเปิดแอป",
+    "description": "หน้าโหลดตอนเข้าสู่ระบบ"
+  }
+]

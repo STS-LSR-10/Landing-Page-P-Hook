@@ -1,0 +1,919 @@
+[
+  {
+    "builder": "buildConfirmMessage",
+    "file": "cards/confirm-message-1.png",
+    "altText": "จดแล้ว: ขายของ ฿300",
+    "title": "การ์ดจดสำเร็จ",
+    "description": "ขึ้นทุกครั้งที่จดรายการ: ชื่อ ยอด หมวด วันที่ สถานะงบ ปุ่มแก้/ลบ เลือกกระเป๋า แนบรูป"
+  },
+  {
+    "builder": "buildConfirmMessage",
+    "file": "cards/confirm-message-2.png",
+    "altText": "จดแล้ว: กาแฟ ฿30",
+    "title": "การ์ดจดสำเร็จ",
+    "description": "ขึ้นทุกครั้งที่จดรายการ: ชื่อ ยอด หมวด วันที่ สถานะงบ ปุ่มแก้/ลบ เลือกกระเป๋า แนบรูป"
+  },
+  {
+    "builder": "buildConfirmMessage",
+    "file": "cards/confirm-message-3.png",
+    "altText": "จดแล้ว: รหัสล็อก ฿1",
+    "title": "การ์ดจดสำเร็จ",
+    "description": "ขึ้นทุกครั้งที่จดรายการ: ชื่อ ยอด หมวด วันที่ สถานะงบ ปุ่มแก้/ลบ เลือกกระเป๋า แนบรูป"
+  },
+  {
+    "builder": "buildConfirmMessage",
+    "file": "cards/confirm-message-4.png",
+    "altText": "จดแล้ว: กาแฟ ฿50",
+    "title": "การ์ดจดสำเร็จ",
+    "description": "ขึ้นทุกครั้งที่จดรายการ: ชื่อ ยอด หมวด วันที่ สถานะงบ ปุ่มแก้/ลบ เลือกกระเป๋า แนบรูป"
+  },
+  {
+    "builder": "buildConfirmMessage",
+    "file": "cards/confirm-message-5.png",
+    "altText": "จดแล้ว: ช้อปปิ้ง ฿600",
+    "title": "การ์ดจดสำเร็จ",
+    "description": "ขึ้นทุกครั้งที่จดรายการ: ชื่อ ยอด หมวด วันที่ สถานะงบ ปุ่มแก้/ลบ เลือกกระเป๋า แนบรูป"
+  },
+  {
+    "builder": "buildComposeCard",
+    "file": "cards/compose-card-1.png",
+    "altText": "พิมพ์บอกพี่ฮูกได้เลย เช่น กระเพราหมูกรอบ 65 · เงินเดือน 25000",
+    "title": "การ์ดเริ่มจด",
+    "description": "ปุ่มลัดเริ่มพิมพ์รายการ"
+  },
+  {
+    "builder": "buildSearchCard",
+    "file": "cards/search-card-1.png",
+    "altText": "ค้นหา #ปาร์ตี้: พบ 2 รายการ รายจ่าย ฿120",
+    "title": "การ์ดค้นหา",
+    "description": "ผลค้นหารายการพร้อมยอดรวม (Pro)"
+  },
+  {
+    "builder": "buildSearchCard",
+    "file": "cards/search-card-2.png",
+    "altText": "ค้นหา เช่า: พบ 2 รายการ รายจ่าย ฿120",
+    "title": "การ์ดค้นหา",
+    "description": "ผลค้นหารายการพร้อมยอดรวม (Pro)"
+  },
+  {
+    "builder": "buildSearchCard",
+    "file": "cards/search-card-3.png",
+    "altText": "ค้นหา กาแฟ: พบ 3 รายการ รายจ่าย ฿105.50",
+    "title": "การ์ดค้นหา",
+    "description": "ผลค้นหารายการพร้อมยอดรวม (Pro)"
+  },
+  {
+    "builder": "buildSearchCard",
+    "file": "cards/search-card-4.png",
+    "altText": "ค้นหา #ปาร์ตี้: พบ 3 รายการ รายจ่าย ฿105.50",
+    "title": "การ์ดค้นหา",
+    "description": "ผลค้นหารายการพร้อมยอดรวม (Pro)"
+  },
+  {
+    "builder": "buildSearchCard",
+    "file": "cards/search-card-5.png",
+    "altText": "ค้นหา x: พบ 9 รายการ รายจ่าย ฿9",
+    "title": "การ์ดค้นหา",
+    "description": "ผลค้นหารายการพร้อมยอดรวม (Pro)"
+  },
+  {
+    "builder": "buildFilesSavedCard",
+    "file": "cards/files-saved-card-1.png",
+    "altText": "เก็บแล้ว 2 ไฟล์ 📁",
+    "title": "การ์ดเก็บไฟล์สำเร็จ",
+    "description": "ยืนยันว่าเก็บไฟล์แล้ว"
+  },
+  {
+    "builder": "buildFilesSavedCard",
+    "file": "cards/files-saved-card-2.png",
+    "altText": "เก็บไฟล์แล้ว 📁",
+    "title": "การ์ดเก็บไฟล์สำเร็จ",
+    "description": "ยืนยันว่าเก็บไฟล์แล้ว"
+  },
+  {
+    "builder": "buildFilesSavedCard",
+    "file": "cards/files-saved-card-3.png",
+    "altText": "เก็บแล้ว 3 ไฟล์ 📁",
+    "title": "การ์ดเก็บไฟล์สำเร็จ",
+    "description": "ยืนยันว่าเก็บไฟล์แล้ว"
+  },
+  {
+    "builder": "buildGroupWelcomeCard",
+    "file": "cards/group-welcome-card-1.png",
+    "altText": "พี่ฮูกมาแล้ว! ช่วยกันจดรายจ่ายในกลุ่ม แตะ \"เปิดสมุดกลุ่ม\" เพื่อเริ่ม",
+    "title": "การ์ดต้อนรับในกลุ่ม",
+    "description": "ตอนชวนบอทเข้ากลุ่ม"
+  },
+  {
+    "builder": "buildBillSetupCard",
+    "file": "cards/bill-setup-card-1.png",
+    "altText": "หารบิล บิลก ฿100 · เลือกคนหาร",
+    "title": "การ์ดตั้งค่าหารบิล",
+    "description": "ตั้งค่าหารบิลก่อนเริ่มเก็บ"
+  },
+  {
+    "builder": "buildBillSetupCard",
+    "file": "cards/bill-setup-card-2.png",
+    "altText": "หารบิล บิลข ฿100 · เลือกคนหาร",
+    "title": "การ์ดตั้งค่าหารบิล",
+    "description": "ตั้งค่าหารบิลก่อนเริ่มเก็บ"
+  },
+  {
+    "builder": "buildBillSetupCard",
+    "file": "cards/bill-setup-card-3.png",
+    "altText": "หารบิล บิลฉ ฿100 · เลือกคนหาร",
+    "title": "การ์ดตั้งค่าหารบิล",
+    "description": "ตั้งค่าหารบิลก่อนเริ่มเก็บ"
+  },
+  {
+    "builder": "buildBillSetupCard",
+    "file": "cards/bill-setup-card-4.png",
+    "altText": "หารบิล บิลญ ฿100 · เลือกคนหาร",
+    "title": "การ์ดตั้งค่าหารบิล",
+    "description": "ตั้งค่าหารบิลก่อนเริ่มเก็บ"
+  },
+  {
+    "builder": "buildBillSetupCard",
+    "file": "cards/bill-setup-card-5.png",
+    "altText": "หารบิล หมูกระทะ ฿1,200 · เลือกคนหาร",
+    "title": "การ์ดตั้งค่าหารบิล",
+    "description": "ตั้งค่าหารบิลก่อนเริ่มเก็บ"
+  },
+  {
+    "builder": "buildFileResults",
+    "file": "cards/file-results-1.png",
+    "altText": "พบ 6 ไฟล์",
+    "title": "การ์ดผลค้นหาไฟล์",
+    "description": "ค้นหาไฟล์ที่ฝากไว้"
+  },
+  {
+    "builder": "buildFileResults",
+    "file": "cards/file-results-2.png",
+    "altText": "พบ 1 ไฟล์",
+    "title": "การ์ดผลค้นหาไฟล์",
+    "description": "ค้นหาไฟล์ที่ฝากไว้"
+  },
+  {
+    "builder": "buildReminderCard",
+    "file": "cards/reminder-card-1.png",
+    "altText": "ตั้งเตือนแล้ว: ทำ weekly",
+    "title": "การ์ดเตือน",
+    "description": "ยืนยันเตือนที่ตั้ง พร้อมปุ่มเลื่อน/แก้/ยกเลิก/เพิ่มลงปฏิทิน"
+  },
+  {
+    "builder": "buildReminderCard",
+    "file": "cards/reminder-card-2.png",
+    "altText": "ตั้งเตือนแล้ว: ประชุม 3 โมง",
+    "title": "การ์ดเตือน",
+    "description": "ยืนยันเตือนที่ตั้ง พร้อมปุ่มเลื่อน/แก้/ยกเลิก/เพิ่มลงปฏิทิน"
+  },
+  {
+    "builder": "buildReminderCard",
+    "file": "cards/reminder-card-3.png",
+    "altText": "ตั้งเตือนแล้ว: จ่ายค่าไฟ",
+    "title": "การ์ดเตือน",
+    "description": "ยืนยันเตือนที่ตั้ง พร้อมปุ่มเลื่อน/แก้/ยกเลิก/เพิ่มลงปฏิทิน"
+  },
+  {
+    "builder": "buildReminderCard",
+    "file": "cards/reminder-card-4.png",
+    "altText": "ตั้งเตือนแล้ว: กินยา",
+    "title": "การ์ดเตือน",
+    "description": "ยืนยันเตือนที่ตั้ง พร้อมปุ่มเลื่อน/แก้/ยกเลิก/เพิ่มลงปฏิทิน"
+  },
+  {
+    "builder": "buildReminderCard",
+    "file": "cards/reminder-card-5.png",
+    "altText": "ตั้งเตือนแล้ว: ส่งงาน",
+    "title": "การ์ดเตือน",
+    "description": "ยืนยันเตือนที่ตั้ง พร้อมปุ่มเลื่อน/แก้/ยกเลิก/เพิ่มลงปฏิทิน"
+  },
+  {
+    "builder": "buildBillCollectingCard",
+    "file": "cards/bill-collecting-card-1.png",
+    "altText": "หมูกระทะ: ค้าง 2 คน ฿600",
+    "title": "การ์ดหารบิล",
+    "description": "หารบิลกลุ่ม เลือกว่าใครร่วมจ่าย"
+  },
+  {
+    "builder": "buildBillCollectingCard",
+    "file": "cards/bill-collecting-card-2.png",
+    "altText": "หมูกระทะ: ค้าง 2 คน ฿800",
+    "title": "การ์ดหารบิล",
+    "description": "หารบิลกลุ่ม เลือกว่าใครร่วมจ่าย"
+  },
+  {
+    "builder": "buildBillCollectingCard",
+    "file": "cards/bill-collecting-card-3.png",
+    "altText": "หมูกระทะ: ค้าง 1 คน ฿300",
+    "title": "การ์ดหารบิล",
+    "description": "หารบิลกลุ่ม เลือกว่าใครร่วมจ่าย"
+  },
+  {
+    "builder": "buildBillCollectingCard",
+    "file": "cards/bill-collecting-card-4.png",
+    "altText": "หมูกระทะ: ค้าง 3 คน ฿675",
+    "title": "การ์ดหารบิล",
+    "description": "หารบิลกลุ่ม เลือกว่าใครร่วมจ่าย"
+  },
+  {
+    "builder": "buildBillCollectingCard",
+    "file": "cards/bill-collecting-card-5.png",
+    "altText": "หมูกระทะ: เก็บครบแล้ว 🎉",
+    "title": "การ์ดหารบิล",
+    "description": "หารบิลกลุ่ม เลือกว่าใครร่วมจ่าย"
+  },
+  {
+    "builder": "buildBillQrCarousels",
+    "file": "cards/bill-qr-carousels-1.png",
+    "altText": "QR จ่ายบิล หมูกระทะ ให้ แอน: บ๊อบ ฿400, ชมพู ฿400",
+    "title": "การ์ด QR รายคน",
+    "description": "แต่ละคนได้การ์ดพร้อมยอดและ QR พร้อมเพย์ (ภาพ QR ในตัวอย่างเป็นช่องว่าง)"
+  },
+  {
+    "builder": "buildBillQrCarousels",
+    "file": "cards/bill-qr-carousels-2.png",
+    "altText": "QR จ่ายบิล หมูกระทะ ให้ แอน: บ๊อบ ฿300, ชมพู ฿300",
+    "title": "การ์ด QR รายคน",
+    "description": "แต่ละคนได้การ์ดพร้อมยอดและ QR พร้อมเพย์ (ภาพ QR ในตัวอย่างเป็นช่องว่าง)"
+  },
+  {
+    "builder": "buildGroupRemindersCard",
+    "file": "cards/group-reminders-card-1.png",
+    "altText": "เตือนของกลุ่ม 1 รายการ",
+    "title": "การ์ดเตือนกลุ่ม",
+    "description": "เตือนที่ตั้งไว้ให้กลุ่ม แท็กคนได้"
+  },
+  {
+    "builder": "buildGroupRemindersCard",
+    "file": "cards/group-reminders-card-2.png",
+    "altText": "เตือนของกลุ่ม 0 รายการ",
+    "title": "การ์ดเตือนกลุ่ม",
+    "description": "เตือนที่ตั้งไว้ให้กลุ่ม แท็กคนได้"
+  },
+  {
+    "builder": "buildGroupRemindersCard",
+    "file": "cards/group-reminders-card-3.png",
+    "altText": "เตือนของกลุ่ม 2 รายการ",
+    "title": "การ์ดเตือนกลุ่ม",
+    "description": "เตือนที่ตั้งไว้ให้กลุ่ม แท็กคนได้"
+  },
+  {
+    "builder": "buildNoteListCard",
+    "file": "cards/note-list-card-1.png",
+    "altText": "โน้ตที่มี \"เช่า\": 1",
+    "title": "การ์ดโน้ต",
+    "description": "โน้ตที่จดไว้และผลค้นหาโน้ต"
+  },
+  {
+    "builder": "buildNoteListCard",
+    "file": "cards/note-list-card-2.png",
+    "altText": "โน้ตที่มี \"สัญญา\": 1",
+    "title": "การ์ดโน้ต",
+    "description": "โน้ตที่จดไว้และผลค้นหาโน้ต"
+  },
+  {
+    "builder": "buildNoteListCard",
+    "file": "cards/note-list-card-3.png",
+    "altText": "โน้ตที่มี \"#ปาร์ตี้\": 1",
+    "title": "การ์ดโน้ต",
+    "description": "โน้ตที่จดไว้และผลค้นหาโน้ต"
+  },
+  {
+    "builder": "buildNoteListCard",
+    "file": "cards/note-list-card-4.png",
+    "altText": "โน้ตล่าสุดของกลุ่ม: 2",
+    "title": "การ์ดโน้ต",
+    "description": "โน้ตที่จดไว้และผลค้นหาโน้ต"
+  },
+  {
+    "builder": "buildWalletsCard",
+    "file": "cards/wallets-card-1.png",
+    "altText": "กระเป๋าเงิน รวม -฿2,500",
+    "title": "การ์ดกระเป๋า",
+    "description": "ยอดแต่ละกระเป๋าและยอดรวม"
+  },
+  {
+    "builder": "buildWalletsCard",
+    "file": "cards/wallets-card-2.png",
+    "altText": "กระเป๋าเงิน รวม ฿0",
+    "title": "การ์ดกระเป๋า",
+    "description": "ยอดแต่ละกระเป๋าและยอดรวม"
+  },
+  {
+    "builder": "buildWalletsCard",
+    "file": "cards/wallets-card-3.png",
+    "altText": "กระเป๋าเงิน รวม ฿1,000",
+    "title": "การ์ดกระเป๋า",
+    "description": "ยอดแต่ละกระเป๋าและยอดรวม"
+  },
+  {
+    "builder": "buildGroupSummaryCard",
+    "file": "cards/group-summary-card-1.png",
+    "altText": "สมุดกลุ่ม · เดือนนี้: รวม ฿1,000 (2 รายการ)",
+    "title": "การ์ดสรุปกลุ่ม",
+    "description": "ใครจ่ายไปเท่าไรในกลุ่ม (Elite)"
+  },
+  {
+    "builder": "buildGroupSummaryCard",
+    "file": "cards/group-summary-card-2.png",
+    "altText": "สมุดกลุ่ม · เดือนนี้: รวม ฿1,550.50 (3 รายการ)",
+    "title": "การ์ดสรุปกลุ่ม",
+    "description": "ใครจ่ายไปเท่าไรในกลุ่ม (Elite)"
+  },
+  {
+    "builder": "buildGroupSummaryCard",
+    "file": "cards/group-summary-card-3.png",
+    "altText": "สมุดกลุ่ม · เดือนนี้: รวม ฿100 (1 รายการ)",
+    "title": "การ์ดสรุปกลุ่ม",
+    "description": "ใครจ่ายไปเท่าไรในกลุ่ม (Elite)"
+  },
+  {
+    "builder": "buildChaseCard",
+    "file": "cards/chase-card-1.png",
+    "altText": "ตามเงิน: ค้างรวม ฿600",
+    "title": "การ์ดตามเงิน",
+    "description": "เตือนคนที่ยังค้างจ่ายในกลุ่ม"
+  },
+  {
+    "builder": "buildChaseCard",
+    "file": "cards/chase-card-2.png",
+    "altText": "ตามเงิน: ค้างรวม ฿300",
+    "title": "การ์ดตามเงิน",
+    "description": "เตือนคนที่ยังค้างจ่ายในกลุ่ม"
+  },
+  {
+    "builder": "buildGroupRecentCard",
+    "file": "cards/group-recent-card-1.png",
+    "altText": "รายการล่าสุดของกลุ่ม 2 รายการ",
+    "title": "การ์ดรายการล่าสุดของกลุ่ม",
+    "description": "รายการล่าสุดในสมุดกลุ่ม"
+  },
+  {
+    "builder": "buildGroupRecentCard",
+    "file": "cards/group-recent-card-2.png",
+    "altText": "รายการล่าสุดของกลุ่ม 1 รายการ",
+    "title": "การ์ดรายการล่าสุดของกลุ่ม",
+    "description": "รายการล่าสุดในสมุดกลุ่ม"
+  },
+  {
+    "builder": "buildCardsCard",
+    "file": "cards/cards-card-1.png",
+    "altText": "บัตรเครดิต 1 ใบ",
+    "title": "การ์ดบัตรเครดิต",
+    "description": "วงเงิน ยอดรอบบิล วันตัดรอบ (Pro)"
+  },
+  {
+    "builder": "buildGroupHelpCard",
+    "file": "cards/group-help-card-1.png",
+    "altText": "วิธีใช้สมุดกลุ่ม: จด ข้าวเที่ยง 350 · สรุป · ล่าสุด · หารบิล",
+    "title": "การ์ดวิธีใช้สมุดกลุ่ม",
+    "description": "คำสั่งในกลุ่ม"
+  },
+  {
+    "builder": "buildFilesPageCard",
+    "file": "cards/files-page-card-1.png",
+    "altText": "ไฟล์ของฉัน",
+    "title": "การ์ดคลังไฟล์",
+    "description": "เปิดคลังของฉัน"
+  },
+  {
+    "builder": "buildDebtsCard",
+    "file": "cards/debts-card-1.png",
+    "altText": "หนี้สิน: ติดเรา ฿500 · เราติด ฿1,000",
+    "title": "การ์ดหนี้",
+    "description": "เงินให้ยืมและยอดค้างรายคน (Elite)"
+  },
+  {
+    "builder": "buildDebtsCard",
+    "file": "cards/debts-card-2.png",
+    "altText": "หนี้สิน: ติดเรา ฿0 · เราติด ฿1",
+    "title": "การ์ดหนี้",
+    "description": "เงินให้ยืมและยอดค้างรายคน (Elite)"
+  },
+  {
+    "builder": "buildDebtsCard",
+    "file": "cards/debts-card-3.png",
+    "altText": "หนี้สิน: ติดเรา ฿600 · เราติด ฿2,000",
+    "title": "การ์ดหนี้",
+    "description": "เงินให้ยืมและยอดค้างรายคน (Elite)"
+  },
+  {
+    "builder": "buildBillQrCard",
+    "file": "cards/bill-qr-card-1.png",
+    "altText": "บ๊อบ โอน ฿300 ให้ แอน (หมูกระทะ)",
+    "title": "การ์ด QR",
+    "description": "การ์ด QR พร้อมเพย์ (ภาพ QR ในตัวอย่างเป็นช่องว่าง)"
+  },
+  {
+    "builder": "buildTripSummaryCard",
+    "file": "cards/trip-summary-card-1.png",
+    "altText": "สรุปทริป เชียงใหม่: รวม ฿1,100",
+    "title": "การ์ดสรุปทริป",
+    "description": "หารค่าทริป ใครโอนคืนใคร"
+  },
+  {
+    "builder": "buildTripSummaryCard",
+    "file": "cards/trip-summary-card-2.png",
+    "altText": "สรุปทริป x: รวม ฿1",
+    "title": "การ์ดสรุปทริป",
+    "description": "หารค่าทริป ใครโอนคืนใคร"
+  },
+  {
+    "builder": "buildGroupTripsCard",
+    "file": "cards/group-trips-card-1.png",
+    "altText": "ทริปที่จบแล้ว 1 ทริป",
+    "title": "การ์ดทริปของกลุ่ม",
+    "description": "ทริปที่เปิดอยู่และที่จบแล้ว"
+  },
+  {
+    "builder": "buildGroupTripsCard",
+    "file": "cards/group-trips-card-2.png",
+    "altText": "ทริปที่จบแล้ว 0 ทริป",
+    "title": "การ์ดทริปของกลุ่ม",
+    "description": "ทริปที่เปิดอยู่และที่จบแล้ว"
+  },
+  {
+    "builder": "buildSummaryMessage",
+    "file": "cards/summary-message-1.png",
+    "altText": "สรุปรายเดือน 1 ต.ค. – 31 ต.ค.: รายรับ ฿0 รายจ่าย ฿1,000",
+    "title": "การ์ดสรุป (แบบย่อ)",
+    "description": "สรุปแบบสั้น"
+  },
+  {
+    "builder": "buildSummaryMessage",
+    "file": "cards/summary-message-2.png",
+    "altText": "สรุปรายสัปดาห์ 26 ต.ค. – 1 พ.ย.: รายรับ ฿0 รายจ่าย ฿500",
+    "title": "การ์ดสรุป (แบบย่อ)",
+    "description": "สรุปแบบสั้น"
+  },
+  {
+    "builder": "buildSummaryMessage",
+    "file": "cards/summary-message-3.png",
+    "altText": "สรุปรายเดือน 12 ต.ค. – 18 ต.ค.: รายรับ ฿0 รายจ่าย ฿80",
+    "title": "การ์ดสรุป (แบบย่อ)",
+    "description": "สรุปแบบสั้น"
+  },
+  {
+    "builder": "buildSummaryMessage",
+    "file": "cards/summary-message-4.png",
+    "altText": "สรุปรายสัปดาห์ 12 ต.ค. – 18 ต.ค.: รายรับ ฿1,000 รายจ่าย ฿475",
+    "title": "การ์ดสรุป (แบบย่อ)",
+    "description": "สรุปแบบสั้น"
+  },
+  {
+    "builder": "buildSummaryCard",
+    "file": "cards/summary-card-1.png",
+    "altText": "สรุปช่วงที่เลือก 1 ต.ค. 2569 – 15 ต.ค. 2569 (15 วัน): รายรับ ฿1,000 รายจ่าย ฿400",
+    "title": "การ์ดสรุป",
+    "description": "สรุปวันนี้/เดือนนี้/ช่วงวันที่: รายรับ รายจ่าย คงเหลือ หมวดที่ใช้เยอะสุด"
+  },
+  {
+    "builder": "buildSummaryCard",
+    "file": "cards/summary-card-2.png",
+    "altText": "สรุปเดือนที่แล้ว 1 ก.ย. 2569 – 30 ก.ย. 2569 (30 วัน): รายรับ ฿1,000 รายจ่าย ฿400",
+    "title": "การ์ดสรุป",
+    "description": "สรุปวันนี้/เดือนนี้/ช่วงวันที่: รายรับ รายจ่าย คงเหลือ หมวดที่ใช้เยอะสุด"
+  },
+  {
+    "builder": "buildSummaryCard",
+    "file": "cards/summary-card-3.png",
+    "altText": "สรุปเดือนนี้ 1 ต.ค. 2569 – 31 ต.ค. 2569: รายรับ ฿1,000 รายจ่าย ฿300",
+    "title": "การ์ดสรุป",
+    "description": "สรุปวันนี้/เดือนนี้/ช่วงวันที่: รายรับ รายจ่าย คงเหลือ หมวดที่ใช้เยอะสุด"
+  },
+  {
+    "builder": "buildSummaryCard",
+    "file": "cards/summary-card-4.png",
+    "altText": "สรุปเดือนนี้ 1 ต.ค. 2569 – 31 ต.ค. 2569: รายรับ ฿0 รายจ่าย ฿300",
+    "title": "การ์ดสรุป",
+    "description": "สรุปวันนี้/เดือนนี้/ช่วงวันที่: รายรับ รายจ่าย คงเหลือ หมวดที่ใช้เยอะสุด"
+  },
+  {
+    "builder": "buildSummaryCard",
+    "file": "cards/summary-card-5.png",
+    "altText": "สรุปรายสัปดาห์ 12 ต.ค. – 18 ต.ค.: รายรับ ฿1,000 รายจ่าย ฿475",
+    "title": "การ์ดสรุป",
+    "description": "สรุปวันนี้/เดือนนี้/ช่วงวันที่: รายรับ รายจ่าย คงเหลือ หมวดที่ใช้เยอะสุด"
+  },
+  {
+    "builder": "buildVoiceCard",
+    "file": "cards/voice-card-1.png",
+    "altText": "ตรวจรายการจากเสียง: กินข้าวกับแฟน -฿850",
+    "title": "การ์ดจดด้วยเสียง",
+    "description": "ถอดเสียงพูดเป็นรายการให้ตรวจก่อนจด (Pro)"
+  },
+  {
+    "builder": "buildVoiceCard",
+    "file": "cards/voice-card-2.png",
+    "altText": "ตรวจรายการจากเสียง: เงินเดือน +฿20,000",
+    "title": "การ์ดจดด้วยเสียง",
+    "description": "ถอดเสียงพูดเป็นรายการให้ตรวจก่อนจด (Pro)"
+  },
+  {
+    "builder": "buildVoiceCard",
+    "file": "cards/voice-card-3.png",
+    "altText": "ตรวจรายการจากเสียง: ข้าว -฿50",
+    "title": "การ์ดจดด้วยเสียง",
+    "description": "ถอดเสียงพูดเป็นรายการให้ตรวจก่อนจด (Pro)"
+  },
+  {
+    "builder": "buildVoiceCard",
+    "file": "cards/voice-card-4.png",
+    "altText": "ตรวจรายการจากเสียง: น้ำ -฿10",
+    "title": "การ์ดจดด้วยเสียง",
+    "description": "ถอดเสียงพูดเป็นรายการให้ตรวจก่อนจด (Pro)"
+  },
+  {
+    "builder": "buildUpsellCard",
+    "file": "cards/upsell-card-1.png",
+    "altText": "ใช้ ถาม AI ได้มากขึ้น",
+    "title": "การ์ดแนะนำแพ็กเกจ",
+    "description": "บอกว่าฟีเจอร์นี้มีใน Pro/Elite พร้อมทดลองฟรี"
+  },
+  {
+    "builder": "buildUpsellCard",
+    "file": "cards/upsell-card-2.png",
+    "altText": "ให้บอทอ่านสลิปให้อัตโนมัติ",
+    "title": "การ์ดแนะนำแพ็กเกจ",
+    "description": "บอกว่าฟีเจอร์นี้มีใน Pro/Elite พร้อมทดลองฟรี"
+  },
+  {
+    "builder": "buildUpsellCard",
+    "file": "cards/upsell-card-3.png",
+    "altText": "จดย้อนหลังสำหรับสมาชิก Pro",
+    "title": "การ์ดแนะนำแพ็กเกจ",
+    "description": "บอกว่าฟีเจอร์นี้มีใน Pro/Elite พร้อมทดลองฟรี"
+  },
+  {
+    "builder": "buildUpsellCard",
+    "file": "cards/upsell-card-4.png",
+    "altText": "จดด้วยเสียงสำหรับสมาชิก Pro",
+    "title": "การ์ดแนะนำแพ็กเกจ",
+    "description": "บอกว่าฟีเจอร์นี้มีใน Pro/Elite พร้อมทดลองฟรี"
+  },
+  {
+    "builder": "buildHelpTopicCard",
+    "file": "cards/help-topic-card-1.png",
+    "altText": "วิธีใช้: จดรายการ",
+    "title": "การ์ดวิธีใช้",
+    "description": "วิธีใช้แยกหัวข้อ พร้อมตัวอย่างข้อความที่พิมพ์ได้"
+  },
+  {
+    "builder": "buildHelpTopicCard",
+    "file": "cards/help-topic-card-2.png",
+    "altText": "วิธีใช้: เตือนและโน้ต",
+    "title": "การ์ดวิธีใช้",
+    "description": "วิธีใช้แยกหัวข้อ พร้อมตัวอย่างข้อความที่พิมพ์ได้"
+  },
+  {
+    "builder": "buildHelpTopicCard",
+    "file": "cards/help-topic-card-3.png",
+    "altText": "วิธีใช้: แก้ไข เหรียญสะสม ชวนเพื่อน",
+    "title": "การ์ดวิธีใช้",
+    "description": "วิธีใช้แยกหัวข้อ พร้อมตัวอย่างข้อความที่พิมพ์ได้"
+  },
+  {
+    "builder": "buildHelpTopicCard",
+    "file": "cards/help-topic-card-4.png",
+    "altText": "วิธีใช้: ค้นหาและวิเคราะห์",
+    "title": "การ์ดวิธีใช้",
+    "description": "วิธีใช้แยกหัวข้อ พร้อมตัวอย่างข้อความที่พิมพ์ได้"
+  },
+  {
+    "builder": "buildHelpTopicCard",
+    "file": "cards/help-topic-card-5.png",
+    "altText": "วิธีใช้: ทางลัด",
+    "title": "การ์ดวิธีใช้",
+    "description": "วิธีใช้แยกหัวข้อ พร้อมตัวอย่างข้อความที่พิมพ์ได้"
+  },
+  {
+    "builder": "buildHelpTopicCard",
+    "file": "cards/help-topic-card-6.png",
+    "altText": "วิธีใช้: กระเป๋าและบัตร",
+    "title": "การ์ดวิธีใช้",
+    "description": "วิธีใช้แยกหัวข้อ พร้อมตัวอย่างข้อความที่พิมพ์ได้"
+  },
+  {
+    "builder": "buildHelpTopicCard",
+    "file": "cards/help-topic-card-7.png",
+    "altText": "วิธีใช้: สรุป",
+    "title": "การ์ดวิธีใช้",
+    "description": "วิธีใช้แยกหัวข้อ พร้อมตัวอย่างข้อความที่พิมพ์ได้"
+  },
+  {
+    "builder": "buildHelpTopicCard",
+    "file": "cards/help-topic-card-8.png",
+    "altText": "วิธีใช้: งบและเป้าหมาย",
+    "title": "การ์ดวิธีใช้",
+    "description": "วิธีใช้แยกหัวข้อ พร้อมตัวอย่างข้อความที่พิมพ์ได้"
+  },
+  {
+    "builder": "buildHelpTopicCard",
+    "file": "cards/help-topic-card-9.png",
+    "altText": "วิธีใช้: จดแบบพิเศษ",
+    "title": "การ์ดวิธีใช้",
+    "description": "วิธีใช้แยกหัวข้อ พร้อมตัวอย่างข้อความที่พิมพ์ได้"
+  },
+  {
+    "builder": "buildHelpTopicCard",
+    "file": "cards/help-topic-card-10.png",
+    "altText": "วิธีใช้: หนี้และบิล",
+    "title": "การ์ดวิธีใช้",
+    "description": "วิธีใช้แยกหัวข้อ พร้อมตัวอย่างข้อความที่พิมพ์ได้"
+  },
+  {
+    "builder": "buildReminderListCard",
+    "file": "cards/reminder-list-card-1.png",
+    "altText": "เตือนที่รออยู่ 2 รายการ",
+    "title": "การ์ดรายการเตือน",
+    "description": "เตือนที่ตั้งไว้ทั้งหมด"
+  },
+  {
+    "builder": "buildReminderListCard",
+    "file": "cards/reminder-list-card-2.png",
+    "altText": "เตือนที่รออยู่ 3 รายการ",
+    "title": "การ์ดรายการเตือน",
+    "description": "เตือนที่ตั้งไว้ทั้งหมด"
+  },
+  {
+    "builder": "buildReminderListCard",
+    "file": "cards/reminder-list-card-3.png",
+    "altText": "เตือนที่รออยู่ 1 รายการ",
+    "title": "การ์ดรายการเตือน",
+    "description": "เตือนที่ตั้งไว้ทั้งหมด"
+  },
+  {
+    "builder": "buildReminderListCard",
+    "file": "cards/reminder-list-card-4.png",
+    "altText": "เตือนที่รออยู่ 8 รายการ",
+    "title": "การ์ดรายการเตือน",
+    "description": "เตือนที่ตั้งไว้ทั้งหมด"
+  },
+  {
+    "builder": "buildReminderListCard",
+    "file": "cards/reminder-list-card-5.png",
+    "altText": "เตือนที่รออยู่ 0 รายการ",
+    "title": "การ์ดรายการเตือน",
+    "description": "เตือนที่ตั้งไว้ทั้งหมด"
+  },
+  {
+    "builder": "buildWelcomeCard",
+    "file": "cards/welcome-card-1.png",
+    "altText": "สวัสดี! เราคือพี่ฮูก พิมพ์ เช่น กาแฟ 30 หรือ เงินเดือน 25000 ได้เลย",
+    "title": "การ์ดต้อนรับ",
+    "description": "แนะนำวิธีเริ่มใช้เมื่อเพิ่มเพื่อน"
+  },
+  {
+    "builder": "buildCategorySpendCard",
+    "file": "cards/category-spend-card-1.png",
+    "altText": "ใช้จ่ายตามหมวด 25 ต.ค. 2569 – 24 พ.ย. 2569: รวม ฿400",
+    "title": "การ์ดสรุปหมวด",
+    "description": "รายจ่ายแยกตามหมวด พร้อมแท่งสัดส่วน"
+  },
+  {
+    "builder": "buildCategorySpendCard",
+    "file": "cards/category-spend-card-2.png",
+    "altText": "ใช้จ่ายตามหมวด x: รวม ฿400",
+    "title": "การ์ดสรุปหมวด",
+    "description": "รายจ่ายแยกตามหมวด พร้อมแท่งสัดส่วน"
+  },
+  {
+    "builder": "buildCategorySpendCard",
+    "file": "cards/category-spend-card-3.png",
+    "altText": "ใช้จ่ายตามหมวด x: รวม ฿1,000.01",
+    "title": "การ์ดสรุปหมวด",
+    "description": "รายจ่ายแยกตามหมวด พร้อมแท่งสัดส่วน"
+  },
+  {
+    "builder": "buildCategorySpendCard",
+    "file": "cards/category-spend-card-4.png",
+    "altText": "ใช้จ่ายตามหมวด ต.ค.: รวม ฿400",
+    "title": "การ์ดสรุปหมวด",
+    "description": "รายจ่ายแยกตามหมวด พร้อมแท่งสัดส่วน"
+  },
+  {
+    "builder": "buildCategorySpendCard",
+    "file": "cards/category-spend-card-5.png",
+    "altText": "ใช้จ่ายตามหมวด 1 ต.ค. 2569 – 31 ต.ค. 2569: รวม ฿400",
+    "title": "การ์ดสรุปหมวด",
+    "description": "รายจ่ายแยกตามหมวด พร้อมแท่งสัดส่วน"
+  },
+  {
+    "builder": "buildRecentCard",
+    "file": "cards/recent-card-1.png",
+    "altText": "รายการล่าสุด 2 รายการ",
+    "title": "การ์ดรายการล่าสุด",
+    "description": "5 รายการล่าสุด"
+  },
+  {
+    "builder": "buildRecentCard",
+    "file": "cards/recent-card-2.png",
+    "altText": "รายการล่าสุด 1 รายการ",
+    "title": "การ์ดรายการล่าสุด",
+    "description": "5 รายการล่าสุด"
+  },
+  {
+    "builder": "buildCompareCard",
+    "file": "cards/compare-card-1.png",
+    "altText": "เทียบรายจ่ายรายหมวด: ฿200 (▲ 54%) จาก ฿130",
+    "title": "การ์ดเทียบเดือน",
+    "description": "เทียบรายหมวดกับเดือนก่อน (Pro)"
+  },
+  {
+    "builder": "buildCompareCard",
+    "file": "cards/compare-card-2.png",
+    "altText": "เทียบรายจ่ายรายหมวด: ฿370 (▲ 23%) จาก ฿300",
+    "title": "การ์ดเทียบเดือน",
+    "description": "เทียบรายหมวดกับเดือนก่อน (Pro)"
+  },
+  {
+    "builder": "buildCompareCard",
+    "file": "cards/compare-card-3.png",
+    "altText": "เทียบรายจ่ายรายหมวด: ฿150 (▲ 50%) จาก ฿100",
+    "title": "การ์ดเทียบเดือน",
+    "description": "เทียบรายหมวดกับเดือนก่อน (Pro)"
+  },
+  {
+    "builder": "buildYearCard",
+    "file": "cards/year-card-1.png",
+    "altText": "สรุปรายปี 2569: รายรับ ฿1,000 รายจ่าย ฿600",
+    "title": "การ์ดสรุปปี",
+    "description": "ภาพรวมทั้งปีและแนวโน้มรายเดือน (Pro)"
+  },
+  {
+    "builder": "buildYearCard",
+    "file": "cards/year-card-2.png",
+    "altText": "สรุปรายปี 2568: รายรับ ฿1,000 รายจ่าย ฿600",
+    "title": "การ์ดสรุปปี",
+    "description": "ภาพรวมทั้งปีและแนวโน้มรายเดือน (Pro)"
+  },
+  {
+    "builder": "buildBillsCard",
+    "file": "cards/bills-card-1.png",
+    "altText": "บิลที่ตั้งเตือน 1 รายการ",
+    "title": "การ์ดบิล",
+    "description": "บิลและวันครบกำหนด (Elite)"
+  },
+  {
+    "builder": "buildGoalsCard",
+    "file": "cards/goals-card-1.png",
+    "altText": "เป้าหมายการออม 2 ใบ",
+    "title": "การ์ดเป้าหมาย",
+    "description": "กระปุกออมและความคืบหน้า (Pro)"
+  },
+  {
+    "builder": "buildGoalsCard",
+    "file": "cards/goals-card-2.png",
+    "altText": "เป้าหมายการออม 1 ใบ",
+    "title": "การ์ดเป้าหมาย",
+    "description": "กระปุกออมและความคืบหน้า (Pro)"
+  },
+  {
+    "builder": "buildGoalsCard",
+    "file": "cards/goals-card-3.png",
+    "altText": "เป้าหมายการออม 10 ใบ",
+    "title": "การ์ดเป้าหมาย",
+    "description": "กระปุกออมและความคืบหน้า (Pro)"
+  },
+  {
+    "builder": "buildGoalReachedCard",
+    "file": "cards/goal-reached-card-1.png",
+    "altText": "ถึงเป้าแล้ว! เที่ยวญี่ปุ่น ฿30,000",
+    "title": "การ์ดถึงเป้าหมาย",
+    "description": "ฉลองเมื่อออมถึงเป้า"
+  },
+  {
+    "builder": "buildGoalReachedCard",
+    "file": "cards/goal-reached-card-2.png",
+    "altText": "ถึงเป้าแล้ว! รถ ฿30,000",
+    "title": "การ์ดถึงเป้าหมาย",
+    "description": "ฉลองเมื่อออมถึงเป้า"
+  },
+  {
+    "builder": "buildReceiptCard",
+    "file": "cards/receipt-card-1.png",
+    "altText": "จดสำเร็จ 3 รายการ",
+    "title": "การ์ดอ่านสลิป/ใบเสร็จ",
+    "description": "บอทอ่านสลิปหรือใบเสร็จแล้วถามก่อนจด แยกรายการสินค้าได้ (Elite)"
+  },
+  {
+    "builder": "buildReceiptCard",
+    "file": "cards/receipt-card-2.png",
+    "altText": "จดสำเร็จ 2 รายการ",
+    "title": "การ์ดอ่านสลิป/ใบเสร็จ",
+    "description": "บอทอ่านสลิปหรือใบเสร็จแล้วถามก่อนจด แยกรายการสินค้าได้ (Elite)"
+  },
+  {
+    "builder": "buildReceiptCard",
+    "file": "cards/receipt-card-3.png",
+    "altText": "จดสำเร็จ 1 รายการ",
+    "title": "การ์ดอ่านสลิป/ใบเสร็จ",
+    "description": "บอทอ่านสลิปหรือใบเสร็จแล้วถามก่อนจด แยกรายการสินค้าได้ (Elite)"
+  },
+  {
+    "builder": "buildReceiptCard",
+    "file": "cards/receipt-card-4.png",
+    "altText": "จดสำเร็จ 28 รายการ",
+    "title": "การ์ดอ่านสลิป/ใบเสร็จ",
+    "description": "บอทอ่านสลิปหรือใบเสร็จแล้วถามก่อนจด แยกรายการสินค้าได้ (Elite)"
+  },
+  {
+    "builder": "buildPdfCard",
+    "file": "cards/pdf-card-1.png",
+    "altText": "ตรวจรายการจากไฟล์ PDF: 2 รายการ",
+    "title": "การ์ดอ่าน PDF",
+    "description": "อ่านสเตทเมนต์/บิล/รายการจาก PDF แล้วให้ตรวจก่อนจด"
+  },
+  {
+    "builder": "buildPdfCard",
+    "file": "cards/pdf-card-2.png",
+    "altText": "ตรวจรายการจากไฟล์ PDF: 1 รายการ",
+    "title": "การ์ดอ่าน PDF",
+    "description": "อ่านสเตทเมนต์/บิล/รายการจาก PDF แล้วให้ตรวจก่อนจด"
+  },
+  {
+    "builder": "buildInsightCard",
+    "file": "cards/insight-card-1.png",
+    "altText": "AI Insight: ชานมใช้ไป ฿420 (6 ครั้ง) เพิ่มขึ้น 40% จากเดือนก่อน",
+    "title": "การ์ดวิเคราะห์ AI",
+    "description": "AI วิเคราะห์การใช้จ่ายเป็นภาษาคน (Elite)"
+  },
+  {
+    "builder": "buildInsightCard",
+    "file": "cards/insight-card-2.png",
+    "altText": "AI Insight: หมวดอาหารสูงสุด ฿3,691 ซึ่งเพิ่มจาก ฿2,000",
+    "title": "การ์ดวิเคราะห์ AI",
+    "description": "AI วิเคราะห์การใช้จ่ายเป็นภาษาคน (Elite)"
+  },
+  {
+    "builder": "buildInsightCard",
+    "file": "cards/insight-card-3.png",
+    "altText": "AI Insight: รายจ่ายรวม ฿10,000 เพิ่มขึ้น 25% จากเดือนก่อน",
+    "title": "การ์ดวิเคราะห์ AI",
+    "description": "AI วิเคราะห์การใช้จ่ายเป็นภาษาคน (Elite)"
+  },
+  {
+    "builder": "buildOpenPageCard",
+    "file": "cards/open-page-card-1.png",
+    "altText": "เปิดหน้าวิเคราะห์",
+    "title": "การ์ดเปิดหน้าในแอป",
+    "description": "ปุ่มเปิดหน้า สรุป/รายการ/งบ/วิเคราะห์"
+  },
+  {
+    "builder": "buildOpenPageCard",
+    "file": "cards/open-page-card-2.png",
+    "altText": "เปิดหน้าหมวดและงบ",
+    "title": "การ์ดเปิดหน้าในแอป",
+    "description": "ปุ่มเปิดหน้า สรุป/รายการ/งบ/วิเคราะห์"
+  },
+  {
+    "builder": "buildOpenPageCard",
+    "file": "cards/open-page-card-3.png",
+    "altText": "เปิดหน้ารายการ",
+    "title": "การ์ดเปิดหน้าในแอป",
+    "description": "ปุ่มเปิดหน้า สรุป/รายการ/งบ/วิเคราะห์"
+  },
+  {
+    "builder": "buildOpenPageCard",
+    "file": "cards/open-page-card-4.png",
+    "altText": "เปิดหน้าสรุป",
+    "title": "การ์ดเปิดหน้าในแอป",
+    "description": "ปุ่มเปิดหน้า สรุป/รายการ/งบ/วิเคราะห์"
+  },
+  {
+    "builder": "buildForecastCard",
+    "file": "cards/forecast-card-1.png",
+    "altText": "พยากรณ์: สิ้นรอบจะเหลือ ฿39,941.16",
+    "title": "การ์ดพยากรณ์",
+    "description": "คาดเงินปลายรอบจากพฤติกรรมการใช้จ่าย (Elite)"
+  },
+  {
+    "builder": "buildForecastCard",
+    "file": "cards/forecast-card-2.png",
+    "altText": "พยากรณ์: สิ้นรอบจะเหลือ ฿27,181.80",
+    "title": "การ์ดพยากรณ์",
+    "description": "คาดเงินปลายรอบจากพฤติกรรมการใช้จ่าย (Elite)"
+  },
+  {
+    "builder": "buildForecastCard",
+    "file": "cards/forecast-card-3.png",
+    "altText": "พยากรณ์: สิ้นรอบจะเหลือ -฿1,000 เงินหมดประมาณ 31 ต.ค.",
+    "title": "การ์ดพยากรณ์",
+    "description": "คาดเงินปลายรอบจากพฤติกรรมการใช้จ่าย (Elite)"
+  },
+  {
+    "builder": "buildForecastCard",
+    "file": "cards/forecast-card-4.png",
+    "altText": "พยากรณ์: สิ้นรอบจะเหลือ ฿9,941.16",
+    "title": "การ์ดพยากรณ์",
+    "description": "คาดเงินปลายรอบจากพฤติกรรมการใช้จ่าย (Elite)"
+  },
+  {
+    "builder": "buildForecastCard",
+    "file": "cards/forecast-card-5.png",
+    "altText": "พยากรณ์: สิ้นรอบจะเหลือ -฿1,700 เงินหมดประมาณ 30 ต.ค.",
+    "title": "การ์ดพยากรณ์",
+    "description": "คาดเงินปลายรอบจากพฤติกรรมการใช้จ่าย (Elite)"
+  }
+]

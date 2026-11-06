@@ -1,0 +1,121 @@
+{
+  "labels": {
+    "free": "Free",
+    "plus": "Pro",
+    "ultimate": "Elite"
+  },
+  "prices": {
+    "normal": {
+      "plus": {
+        "monthly": 59,
+        "yearly": 339
+      },
+      "ultimate": {
+        "monthly": 139,
+        "yearly": 799
+      }
+    },
+    "launch": {
+      "plus": {
+        "monthly": 39,
+        "yearly": 299
+      },
+      "ultimate": {
+        "monthly": 119,
+        "yearly": 699
+      }
+    },
+    "launchEndsAt": "Fri Jan 01 2027 00:00:00 GMT+0700 (Indochina Time)",
+    "trialDays": 7
+  },
+  "limits": {
+    "wallets": {
+      "Free": 1,
+      "Pro": 5,
+      "Elite": null
+    },
+    "savingsGoals": {
+      "Free": 0,
+      "Pro": 5,
+      "Elite": 20
+    },
+    "sharedWalletMembers": {
+      "Free": 0,
+      "Pro": 2,
+      "Elite": 10
+    },
+    "sharedWalletsOwned": {
+      "Free": 0,
+      "Pro": 1,
+      "Elite": 5
+    },
+    "recurringEntries": {
+      "Free": 0,
+      "Pro": 20,
+      "Elite": 100
+    },
+    "slipsPerMonth": {
+      "Free": 0,
+      "Pro": 30,
+      "Elite": null
+    },
+    "freeSlipsPerWeek": 3,
+    "voicePerMonth": {
+      "Free": 0,
+      "Pro": 20,
+      "Elite": 200
+    },
+    "pdfPerMonth": {
+      "Free": 0,
+      "Pro": 10,
+      "Elite": 30
+    },
+    "askAiPerMonth": {
+      "Free": 200,
+      "Pro": 1500,
+      "Elite": 5000
+    },
+    "photosPerMonth": 100,
+    "fairUse": {
+      "slips": 300,
+      "voice": 200,
+      "smartParse": 300
+    }
+  },
+  "minPlanByFeature": {
+    "savingsChart": "Pro",
+    "recurring": "Pro",
+    "multiAccount": "Pro",
+    "merchantMemory": "Pro",
+    "dailyReminder": "Pro",
+    "advancedExport": "Pro",
+    "autoSummary": "Pro",
+    "voiceLog": "Pro",
+    "backdate": "Pro",
+    "multiEntry": "Pro",
+    "tags": "Pro",
+    "entryPhoto": "Pro",
+    "smartParse": "Elite",
+    "customRange": "Pro",
+    "searchTotals": "Pro",
+    "yearSummary": "Pro",
+    "categoryCompare": "Pro",
+    "export": "Pro",
+    "dashboard": "Pro",
+    "forecast": "Elite",
+    "insight": "Elite",
+    "customCategory": "Pro",
+    "transfer": "Pro",
+    "creditCard": "Pro",
+    "debts": "Elite",
+    "foreignCurrency": "Elite",
+    "categoryBudget": "Pro",
+    "budgetAlert": "Pro",
+    "dailyBudget": "Pro",
+    "savingsGoal": "Pro",
+    "billReminder": "Elite",
+    "groupLedger": "Elite",
+    "sharedWallet": "Pro",
+    "personalize": "Pro"
+  }
+}

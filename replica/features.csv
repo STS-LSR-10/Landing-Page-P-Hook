@@ -1,0 +1,17 @@
+feature,area,priority,original_parnuan_or_abdul,clone_phook,notes
+LINE Chat Natural Logging,core,must,yes,yes,พิมพ์รายการง่ายๆ เช่น "กาแฟ 30" หรือ "เงินเดือน 25000"
+Interactive Chat Simulator (#tell),landing,must,yes,yes,จำลองหน้าแชท LINE ให้ลองกดคำสั่งจริงบนเว็บ
+Rich Flex Cards in Chat,chat,must,yes,yes,การ์ดตอบกลับสวยงาม 131 แบบ แก้ไข/ลบได้จากในแชท
+Receipt Slip & PDF OCR Reading,finance,must,yes,yes,ส่งรูปสลิปหรือใบเสร็จ ตรวจสอบก่อนบันทึก
+Voice Note Logging,input,should,yes,yes,ส่งข้อความเสียงพูดแล้วบอทแปลงเป็นรายการบัญชี
+Multi Wallet & Shared Wallet,finance,must,no,yes,กระเป๋าเงินสด ธนาคาร และกระเป๋าร่วมกับแฟน/ครอบครัว
+5 Bot Personalities,branding,must,no,yes,เลือกนิสัยบอทได้ 5 แบบ (อบอุ่น เพื่อนซี้ ปากแจ๋ว จิบชา นอนดึก)
+Group Ledger & Bill Split QR,group,must,no,yes,ชวนเข้ากลุ่ม LINE หารบิลพร้อม QR พร้อมเพย์รายคน และสรุปทริป
+Reminders & Google Calendar,productivity,must,yes,yes,แจ้งเตือนสิ่งที่ต้องทำ ซิงก์ปฏิทิน Google Calendar
+LIFF Mobile Web App,visualization,must,yes,yes,เปิดดูสรุป กราฟ งบ รายการ และเตือนในเว็บแอปได้ทันที
+Budget Tracking & 50-30-20,finance,must,yes,yes,ตั้งงบรายเดือน/รายวัน พร้อมแจ้งเตือนเมื่อแตะ 80%
+Savings Goals & Piggybank,finance,should,no,yes,ตั้งเป้าหมายออมเงินพร้อมการ์ดฉลองเมื่อถึงเป้า
+AI Financial Assistant,ai,must,yes,yes,ถามตอบเรื่องการเงินส่วนตัว วิเคราะห์พฤติกรรม และคำถามทั่วไป
+Pastel Mint Design System,branding,must,yes,yes,ธีมเขียวพาสเทล สบายตา มิตรไมตรี ถูกต้องตาม brand.json
+Search & Export CSV/Excel,data,must,yes,yes,ค้นหารายการตามแท็ก ช่วงวันที่ และส่งออกข้อมูล
+Privacy PDPA & Data Erasure,security,must,yes,yes,ความปลอดภัยตามกฎหมาย PDPA ข้อมูลไม่นำไปเทรน AI ลบข้อมูลได้เอง

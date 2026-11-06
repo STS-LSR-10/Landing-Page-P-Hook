@@ -1,0 +1,110 @@
+{
+  "themes": {
+    "mint": {
+      "label": "เขียวมิ้นต์",
+      "palette": {
+        "primary": "#0F766E",
+        "soft": "#CCFBF1",
+        "headTitle": "#0B5D4F",
+        "headSub": "#3F6B63",
+        "headAccent": "#0F766E",
+        "bodyTitle": "#0B5D4F",
+        "bodySub": "#3F6B63",
+        "bodyDeep": "#14352E",
+        "accent": "#1ABC9C"
+      }
+    },
+    "ocean": {
+      "label": "ฟ้าทะเล",
+      "palette": {
+        "primary": "#0369A1",
+        "soft": "#E0F2FE",
+        "headTitle": "#0C4A6E",
+        "headSub": "#3B6A8A",
+        "headAccent": "#0369A1",
+        "bodyTitle": "#0C4A6E",
+        "bodySub": "#3B6A8A",
+        "bodyDeep": "#0F2A3F",
+        "accent": "#38BDF8"
+      }
+    },
+    "rose": {
+      "label": "ชมพูพีช",
+      "palette": {
+        "primary": "#BE185D",
+        "soft": "#FCE7F3",
+        "headTitle": "#831843",
+        "headSub": "#9D4A6E",
+        "headAccent": "#BE185D",
+        "bodyTitle": "#831843",
+        "bodySub": "#9D4A6E",
+        "bodyDeep": "#4A1230",
+        "accent": "#F472B6"
+      }
+    },
+    "lavender": {
+      "label": "ม่วงลาเวนเดอร์",
+      "palette": {
+        "primary": "#6D28D9",
+        "soft": "#EDE9FE",
+        "headTitle": "#4C1D95",
+        "headSub": "#6B5B95",
+        "headAccent": "#6D28D9",
+        "bodyTitle": "#4C1D95",
+        "bodySub": "#6B5B95",
+        "bodyDeep": "#2E1065",
+        "accent": "#A78BFA"
+      }
+    },
+    "night": {
+      "label": "ดำกลางคืน",
+      "palette": {
+        "primary": "#1E293B",
+        "soft": "#1E293B",
+        "headTitle": "#F8FAFC",
+        "headSub": "#CBD5E1",
+        "headAccent": "#5EEAD4",
+        "bodyTitle": "#0F172A",
+        "bodySub": "#475569",
+        "bodyDeep": "#0F172A",
+        "accent": "#38BDF8"
+      }
+    }
+  },
+  "personas": {
+    "warm": {
+      "label": "ฮูกน้อยอบอุ่น",
+      "emoji": "🌸",
+      "desc": "พูดจาน่ารัก สุภาพ ให้กำลังใจ ใส่ใจทุกเรื่องของคุณ",
+      "sample": "รับทราบครับ{name} ไม่ต้องห่วงนะ พรุ่งนี้สู้ใหม่ พี่ฮูกคอยซัพพอร์ตเสมอครับ ✨"
+    },
+    "bestie": {
+      "label": "ฮูกเพื่อนซี้",
+      "emoji": "🤝",
+      "desc": "ฟีลเพื่อนสนิท คุยชิล แซะพอกรุบกริบ แต่พึ่งพาได้",
+      "sample": "เออ จัดไป{name}! จดไว้ให้ละ เผื่อรอบนี้สมองเออเร่อลืมอีก 555"
+    },
+    "spicy": {
+      "label": "ฮูกปากแจ๋ว",
+      "emoji": "🌶️",
+      "desc": "กวนประสาทขั้นสุด ปั่นเก่ง ขยันเบรก ยิงมุกไม่พัก",
+      "sample": "พรุ่งนี้อีกละนะ{name} พูดงี้มาสามวันติดละ 555 เดี๋ยวพี่ฮูกบินไปจิกถึงเตียงเลยคอยดู!"
+    },
+    "tea": {
+      "label": "นกฮูกจิบชา",
+      "emoji": "🫖",
+      "desc": "ท่าทีสุขุม ผู้ดีทุกคำ แต่คำพูดแอบเหน็บเบา ๆ ให้สะดุ้ง",
+      "sample": "ได้ครับ{name} นึกว่าจะผลัดเป็นเดือนหน้าซะแล้วนะเนี่ย... บันทึกเรียบร้อยครับ"
+    },
+    "night": {
+      "label": "ฮูกนอนดึก",
+      "emoji": "🦉",
+      "badge": "พิเศษ",
+      "desc": "ขยันเตือนคนนอนดึก จ้องจับผิดรายจ่ายเก่ง ตาวาวทุกการเคลื่อนไหว",
+      "sample": "ดึกป่านนี้ยังไม่นอนอีกนะ{name}! ตาจะค้างแข่งกับพี่ฮูกเหรอ รีบนอนได้แล้ว!"
+    }
+  },
+  "defaultTheme": "mint",
+  "defaultPersona": "warm",
+  "maxCallNameLength": 20
+}
