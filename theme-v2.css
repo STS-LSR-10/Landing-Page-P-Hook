@@ -46,8 +46,8 @@ h1, h2, h3, h4, .brand-name, .btn, .section-tag, .chip, .cat-pill { letter-spaci
 .section-title, .privacy-title {
   font-size: clamp(2.125rem, 4.8vw, 3.75rem);
   font-weight: 700;
-  line-height: 1.16;
-  letter-spacing: -0.02em;
+  line-height: 1.32;
+  letter-spacing: -0.01em;
   color: var(--ink);
   text-wrap: balance;
   line-break: strict;
@@ -146,7 +146,7 @@ h1, h2, h3, h4, .brand-name, .btn, .section-tag, .chip, .cat-pill { letter-spaci
 .hero-badge { background: rgba(255,255,255,.6); border: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,.8); color: var(--ink); }
 .hero-title {
   font-size: clamp(2.5rem, 6.2vw, 5.4rem);
-  line-height: 1.08; letter-spacing: -0.03em; font-weight: 700; color: var(--ink);
+  line-height: 1.34; letter-spacing: -0.015em; font-weight: 700; color: var(--ink);
   margin-bottom: 1.4rem; text-wrap: balance;
 }
 .hero-title .h-line { display: block; }
@@ -210,7 +210,7 @@ h1, h2, h3, h4, .brand-name, .btn, .section-tag, .chip, .cat-pill { letter-spaci
 .cta-section.stack { padding-block: clamp(96px, 16vh, 180px); }
 .cta-card { background: transparent; box-shadow: none; color: var(--ink); padding: 0; overflow: visible; }
 .cta-title {
-  font-size: clamp(2.6rem, 6.4vw, 5rem); line-height: 1.12; letter-spacing: -0.025em;
+  font-size: clamp(2.6rem, 6.4vw, 5rem); line-height: 1.32; letter-spacing: -0.015em;
   color: var(--ink); text-wrap: balance;
 }
 .cta-title .h-soft { color: color-mix(in srgb, var(--ink) 50%, var(--mint-sheet)); }
