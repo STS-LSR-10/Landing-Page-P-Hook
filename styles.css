@@ -2475,6 +2475,8 @@ code {
 .app-scroll { flex: 1; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; background: #fff; }
 .app-scroll::-webkit-scrollbar { display: none; }
 .app-scroll .app-screen-img { width: 100%; display: block; }
+/* bottom tab bar stays pinned while the screen content scrolls */
+.app-nav-img { flex: none; display: block; width: 100%; height: auto; position: relative; z-index: 5; box-shadow: 0 -1px 0 rgba(15,23,42,.04); }
 .webapp-display { grid-template-columns: 370px 1fr; }
 
 /* real QR */

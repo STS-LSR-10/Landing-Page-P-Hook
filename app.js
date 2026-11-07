@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initWebAppTabs() {
   const tabs = document.querySelectorAll('.webapp-tab');
   const screenImg = document.getElementById('webappScreenImg');
+  const navImg = document.getElementById('webappNavImg');
   const title = document.getElementById('webappTitle');
   const desc = document.getElementById('webappDesc');
   const pointsContainer = document.getElementById('webappPoints');
@@ -114,6 +115,7 @@ function initWebAppTabs() {
       screenImg.style.opacity = '0';
       setTimeout(() => {
         screenImg.src = data.img;
+        if (navImg) navImg.src = data.img.replace('app/', 'app/nav/');
         const sc = document.getElementById('appScroll');
         if (sc) sc.scrollTop = 0;
         title.textContent = data.title;
