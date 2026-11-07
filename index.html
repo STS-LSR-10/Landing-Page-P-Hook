@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=14">
+  <link rel="stylesheet" href="styles.css?v=15">
   <link rel="stylesheet" href="theme-v2.css?v=6">
   <script>document.documentElement.classList.add('js-motion');</script>
 </head>
@@ -891,6 +891,31 @@
           </div>
           <a href="#" class="btn btn-primary btn-sm btn-line support-line-link" data-support-line target="_blank" rel="noopener noreferrer">แอด LINE Support</a>
         </div>
+
+        <form class="feedback-card" id="feedback" novalidate>
+          <div class="support-bar-info">
+            <span class="support-bar-icon">💡</span>
+            <div>
+              <strong>มีไอเดียหรืออยากให้ปรับอะไร? บอกทีมงานได้เลย</strong>
+              <small>ทุกข้อความถึงทีมงานโดยตรง และใช้ปรับปรุงพี่ฮูกให้ดีขึ้น</small>
+            </div>
+          </div>
+          <fieldset class="fb-types">
+            <legend class="sr-only">ประเภท</legend>
+            <label><input type="radio" name="type" value="idea" checked><span>💡 เสนอฟีเจอร์</span></label>
+            <label><input type="radio" name="type" value="bug"><span>🐞 แจ้งปัญหา</span></label>
+            <label><input type="radio" name="type" value="other"><span>💬 ความคิดเห็น</span></label>
+          </fieldset>
+          <label class="sr-only" for="fbMessage">ข้อความ</label>
+          <textarea id="fbMessage" name="message" rows="4" minlength="5" maxlength="1000" required placeholder="เล่าให้ฟังหน่อย เช่น อยากให้พี่ฮูกทำอะไรได้เพิ่ม หรือเจอปัญหาตรงไหน"></textarea>
+          <div class="fb-row">
+            <label class="sr-only" for="fbContact">ช่องทางติดต่อกลับ</label>
+            <input id="fbContact" name="contact" type="text" maxlength="120" placeholder="LINE ID หรืออีเมล (ไม่บังคับ)" autocomplete="email">
+            <input type="text" name="website" class="fb-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button type="submit" class="btn btn-primary btn-sm">ส่งข้อเสนอแนะ</button>
+          </div>
+          <p class="fb-status" id="fbStatus" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
 
@@ -1039,6 +1064,7 @@
         <p>LINE Official: <a href="https://line.me/R/ti/p/@p-hook">@p-hook</a></p>
         <p>LINE Support: <a href="#" class="support-line-link" data-support-line>เร็ว ๆ นี้</a></p>
         <p>อีเมล: support@p-hook.com</p>
+        <p><a href="#feedback">💡 ส่งข้อเสนอแนะ</a></p>
         <p class="footer-note">เวอร์ชันอัปเดตล่าสุด 6 พ.ย. 2569</p>
       </div>
     </div>
@@ -1050,7 +1076,7 @@
 
   <!-- Scripts -->
   <script src="simulator.js?v=1"></script>
-  <script src="app.js?v=10"></script>
+  <script src="app.js?v=11"></script>
   <script src="motion.js?v=2"></script>
 </body>
 </html>

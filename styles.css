@@ -2680,3 +2680,29 @@ img, svg { max-width: 100%; }
 .support-bar.is-soon { opacity: .9; }
 a.is-soon { opacity: .6; cursor: default; pointer-events: none; }
 @media (max-width: 640px) { .support-bar { flex-direction: column; text-align: center; } .support-bar-info { flex-direction: column; } .support-bar .btn { width: 100%; justify-content: center; } }
+
+/* Feedback form (posts to functions/api/feedback.js) */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.feedback-card {
+  margin: 1rem auto 0; max-width: 760px; display: grid; gap: .85rem;
+  background: #fff; border: 1px solid #A7F3D0; border-radius: 18px; padding: 1.1rem 1.4rem;
+  scroll-margin-top: 90px;
+}
+.feedback-card strong { display: block; color: #0B5D4F; }
+.feedback-card small { color: #3F6B63; }
+.fb-types { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.fb-types input { position: absolute; opacity: 0; }
+.fb-types span { display: inline-block; padding: .4rem .9rem; border: 1.5px solid #A7F3D0; border-radius: 999px; font-size: .9rem; cursor: pointer; }
+.fb-types input:checked + span { background: #CCFBF1; border-color: #0F766E; color: #0B5D4F; font-weight: 600; }
+.fb-types input:focus-visible + span { outline: 2px solid #0F766E; outline-offset: 2px; }
+.feedback-card textarea, .feedback-card input[type=text] {
+  width: 100%; font: inherit; font-size: 1rem; border: 1.5px solid #D5E3DF; border-radius: 12px; padding: .7rem .9rem; background: #FBFDFC;
+}
+.feedback-card textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+.feedback-card textarea:focus, .feedback-card input[type=text]:focus { outline: none; border-color: #0F766E; box-shadow: 0 0 0 3px rgba(15,118,110,.15); }
+.fb-row { display: flex; gap: .6rem; }
+.fb-row input[type=text] { flex: 1; min-width: 0; }
+.fb-hp { position: absolute; left: -9999px; }
+.fb-status { margin: 0; font-size: .9rem; min-height: 1.2em; }
+.fb-status.ok { color: #0B8A55; } .fb-status.err { color: #C2410C; }
+@media (max-width: 640px) { .feedback-card .support-bar-info { flex-direction: row; } .fb-row { flex-direction: column; } .fb-row .btn { width: 100%; justify-content: center; } }

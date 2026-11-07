@@ -27,8 +27,42 @@ function initSupportLine() {
   if (bar && !SUPPORT_LINE_ID) bar.classList.add('is-soon');
 }
 
+function initFeedback() {
+  const form = document.getElementById('feedback');
+  if (!form) return;
+  const status = document.getElementById('fbStatus');
+  const btn = form.querySelector('button[type=submit]');
+  const say = (text, cls) => { status.textContent = text; status.className = 'fb-status ' + cls; };
+  const ERR = {
+    message: 'ข้อความต้องยาว 5–1,000 ตัวอักษร',
+    contact: 'ช่องทางติดต่อยาวเกินไป',
+    too_many: 'ส่งบ่อยเกินไป ลองใหม่อีกครั้งในอีกสักครู่',
+  };
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    if ((data.message || '').trim().length < 5) return say(ERR.message, 'err');
+    btn.disabled = true;
+    say('กำลังส่ง…', '');
+    try {
+      const res = await fetch('/api/feedback', {
+        method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok || !out.ok) throw new Error(out.error || 'fail');
+      form.reset();
+      say('ขอบคุณมากครับ ทีมงานได้รับแล้ว 🦉', 'ok');
+    } catch (err) {
+      say(ERR[err.message] || 'ส่งไม่สำเร็จ ลองใหม่อีกครั้ง หรืออีเมลมาที่ support@p-hook.com', 'err');
+    } finally {
+      btn.disabled = false;
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initSupportLine();
+  initFeedback();
   initSimulator();
   initWebAppTabs();
   initPersonas();

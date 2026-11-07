@@ -22,3 +22,14 @@
 - ภาพหน้าแอปเป็นภาพเต็มหน้า เมนูล่างอาจซ้อนกลางภาพ กราฟบางหน้าเป็นกรอบว่าง (กราฟโหลดแบบ lazy และบางตัวอย่างเป็นแผน Free ที่ล็อก) ควรครอปหรือเลือกภาพที่เหมาะ
 - ตัวเลขแพ็กเกจและราคาดึงจากโค้ดตอนนี้ ราคาเปิดตัวสิ้นสุด 31 ธ.ค. 2569 ควรเช็กก่อนเผยแพร่
 - ข้อมูลทั้งหมดไม่มีความลับหรือข้อมูลส่วนตัวของผู้ใช้ ไม่มีคีย์หรือโทเคน
+
+## ข้อเสนอแนะจากผู้ใช้ (ฟอร์มบนหน้าเว็บ)
+ฟอร์ม "💡 มีไอเดียหรืออยากให้ปรับอะไร?" อยู่ใต้ส่วน FAQ ส่งไปที่ `functions/api/feedback.js` (Cloudflare Pages Function) แล้วเก็บในฐานข้อมูล D1 ชื่อ `p-hook-feedback` (ตั้งค่าใน `wrangler.toml`, โครงตารางใน `schema.sql`)
+
+- กันสแปม: ช่องหลอกที่คนมองไม่เห็น และจำกัด 5 ข้อความต่อชั่วโมงต่อ IP (เก็บแค่ค่า hash ของ IP ไม่เก็บ IP จริง)
+- อ่านข้อเสนอแนะล่าสุด:
+  ```bash
+  npx wrangler d1 execute p-hook-feedback --remote --command "SELECT id, created_at, type, message, contact, status FROM feedback ORDER BY id DESC LIMIT 50"
+  ```
+  หรือเปิด Cloudflare Dashboard → Workers & Pages → D1 → `p-hook-feedback` → Console
+- ทดสอบ: `node --test tests/feedback.test.mjs`

@@ -1,0 +1,8 @@
+name = "p-hook"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-11-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "p-hook-feedback"
+database_id = "646ab24b-01ad-44f0-8cda-56d1580974fa"
