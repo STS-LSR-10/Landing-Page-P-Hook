@@ -1,71 +1,39 @@
 /**
- * Scroll & motion layer for the "paper sheets" theme.
- * - Stacked sticky sheets: each section sticks, the next one slides over it,
- *   and the covered sheet dims slightly.
- * - Reveal-on-scroll for headers, cards, phones.
- * - Paper scraps in the hero drift with the pointer.
- * - Nav pill tightens after scrolling.
+ * Motion layer for the "ledger notebook" theme.
+ * - Reading-progress pen line under the navbar.
+ * - Reveal-on-scroll: titles wipe in like ink, cards rise in.
+ * - Receipt slips in the hero drift with the pointer.
  */
 (function () {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function initStack() {
-    const stacks = [...document.querySelectorAll('main .stack')];
-    if (!stacks.length) return;
-    stacks.forEach((s) => {
-      if (!s.querySelector(':scope > .stack__shade')) {
-        const shade = document.createElement('div');
-        shade.className = 'stack__shade';
-        shade.setAttribute('aria-hidden', 'true');
-        s.appendChild(shade);
-      }
-    });
-    if (reduce) return;
-
-    const measure = () => {
-      const vh = window.innerHeight;
-      stacks.forEach((s) => {
-        s.style.setProperty('--stick', Math.min(0, vh - s.offsetHeight) + 'px');
-      });
-      paint();
-    };
-
+  function initProgress() {
+    const bar = document.getElementById('readProgress');
+    if (!bar) return;
     let ticking = false;
     const paint = () => {
       ticking = false;
-      const vh = window.innerHeight;
-      for (let i = 0; i < stacks.length; i++) {
-        const next = stacks[i + 1];
-        let cover = 0;
-        if (next) {
-          const top = next.getBoundingClientRect().top;
-          cover = Math.min(1, Math.max(0, (vh - top) / vh));
-        }
-        stacks[i].style.setProperty('--shade', (cover * 0.32).toFixed(3));
-      }
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      bar.style.setProperty('--p', p.toFixed(4));
     };
     window.addEventListener('scroll', () => {
       if (!ticking) { ticking = true; requestAnimationFrame(paint); }
     }, { passive: true });
-    window.addEventListener('resize', measure);
-    if ('ResizeObserver' in window) {
-      const ro = new ResizeObserver(() => measure());
-      stacks.forEach((s) => ro.observe(s));
-    }
-    window.addEventListener('load', measure);
-    measure();
+    window.addEventListener('resize', paint);
+    paint();
   }
 
   function initReveal() {
     const groups = [
-      '.section-header', '.sim-presets', '.sim-device-container', '.sim-phone', '.sim-info-box',
+      '.section-header > *', '.sim-presets', '.sim-device-container', '.sim-info-box',
       '.feature-card', '.webapp-tabs', '.webapp-phone-mockup', '.webapp-detail-card',
       '.persona-tab', '.persona-preview-box', '.explorer-controls',
-      '.billing-toggle-wrapper', '.pricing-card', '.faq-item', '.support-bar',
+      '.pricing-card', '.faq-item', '.support-bar',
       '.privacy-box > *', '.priv-col', '.cta-content > *', '.cta-mascot',
       '.hero-badge', '.hero-desc', '.hero-cta-group', '.hero-trust', '.hero-phone'
     ];
-    const els = [...document.querySelectorAll(groups.join(','))];
+    const els = [...new Set(document.querySelectorAll(groups.join(',')))];
     const byParent = new Map();
     els.forEach((el) => {
       const k = el.parentElement;
@@ -90,7 +58,7 @@
     const hero = document.getElementById('hero');
     const visual = hero && hero.querySelector('.hero-visual');
     if (!visual) return;
-    visual.querySelectorAll('.scrap').forEach((s, i) => s.style.setProperty('--n', i));
+    visual.querySelectorAll('.slip').forEach((s, i) => s.style.setProperty('--n', i));
     if (reduce || window.matchMedia('(hover: none)').matches) return;
     hero.addEventListener('pointermove', (e) => {
       const r = hero.getBoundingClientRect();
@@ -113,7 +81,7 @@
     onScroll();
   }
 
-  const start = () => { initStack(); initReveal(); initDrift(); initNav(); };
+  const start = () => { initProgress(); initReveal(); initDrift(); initNav(); };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();
 })();

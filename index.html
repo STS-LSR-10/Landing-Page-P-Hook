@@ -15,10 +15,10 @@
   <!-- Google Fonts: Kanit & Sarabun -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css?v=13">
-  <link rel="stylesheet" href="theme-v2.css?v=5">
+  <link rel="stylesheet" href="theme-v2.css?v=6">
   <script>document.documentElement.classList.add('js-motion');</script>
 </head>
 <body>
@@ -67,11 +67,12 @@
         </button>
       </div>
     </div>
+    <div class="read-progress" aria-hidden="true"><i id="readProgress"></i></div>
   </header>
 
   <main>
     <!-- Hero Section -->
-    <section class="hero-section stack mat" id="hero">
+    <section class="hero-section" id="hero">
       <div class="container hero-grid">
         <div class="hero-content">
           <div class="hero-badge">
@@ -81,8 +82,8 @@
           
           <h1 class="hero-title">
             <span class="h-line">จดบัญชีและจัดการงาน</span>
-            <span class="h-line h-accent">ในแชท LINE</span>
-            <span class="h-line h-soft">ที่เข้าใจคุณที่สุด</span>
+            <span class="h-line"><mark class="hl">ในแชท LINE</mark></span>
+            <span class="h-line h-thin">ที่เข้าใจคุณที่สุด</span>
           </h1>
           
           <p class="hero-desc">
@@ -174,20 +175,20 @@
             <div class="home-bar"><i></i></div>
           </div></div>
           
-          <div class="scrap" style="--depth:14;top:9%;left:-4%;--rot:-4deg;background:#FFF6C9">☕ กาแฟ 30</div>
-          <div class="scrap" style="--depth:-10;top:30%;right:-8%;--rot:3deg;background:#D9F7EC">💰 เงินเดือน +25,000</div>
-          <div class="scrap" style="--depth:8;top:52%;left:-12%;--rot:2deg;background:#FFE3E8">🍲 หารบิล หมูกระทะ</div>
-          <div class="scrap" style="--depth:-16;top:70%;right:-10%;--rot:-3deg;background:#E7E5FF">⏰ 2 ทุ่ม กินยา</div>
-          <div class="scrap" style="--depth:11;top:86%;left:-2%;--rot:-2deg;background:#E0F2FE">🧾 ค่าไฟ 1,250</div>
+          <div class="slip" style="--depth:14;top:8%;left:-6%"><span class="slip-ic">☕</span><span class="slip-name">กาแฟ</span><span class="slip-amt out">−30</span></div>
+          <div class="slip" style="--depth:-10;top:28%;right:-10%"><span class="slip-ic">💰</span><span class="slip-name">เงินเดือน</span><span class="slip-amt in">+25,000</span></div>
+          <div class="slip" style="--depth:8;top:50%;left:-14%"><span class="slip-ic">🍲</span><span class="slip-name">หารบิล หมูกระทะ</span><span class="slip-amt">÷4</span></div>
+          <div class="slip" style="--depth:-16;top:68%;right:-12%"><span class="slip-ic">⏰</span><span class="slip-name">กินยา</span><span class="slip-amt">20:00</span></div>
+          <div class="slip" style="--depth:11;top:85%;left:-4%"><span class="slip-ic">🧾</span><span class="slip-name">ค่าไฟ</span><span class="slip-amt out">−1,250</span></div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION: Interactive "#tell" LINE Chat Simulator (Inspired by abdul-ai.com/#tell) -->
-    <section class="simulator-section stack sheet sheet--white" id="simulator">
+    <!-- SECTION: Interactive "#tell" LINE Chat Simulator -->
+    <section class="simulator-section sheet sheet--white" id="simulator">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag">Interactive Simulator</span>
+          <span class="section-tag"><b class="tag-num">01</b>Interactive Simulator</span>
           <h2 class="section-title">ลองคุยกับพี่ฮูกได้เลย<br><span class="h-soft">ไม่ต้องรอแอดไลน์</span></h2>
           <p class="section-subtitle">
             กดเลือกคำสั่งยอดนิยมด้านล่าง หรือลองพิมพ์ข้อความในช่องแชทเพื่อสัมผัสประสบการณ์จริง
@@ -296,10 +297,10 @@
     </section>
 
     <!-- SECTION: 6 Core Pillars (from features.md) -->
-    <section class="features-section stack sheet sheet--cream" id="features">
+    <section class="features-section sheet sheet--cream" id="features">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag">Core Features</span>
+          <span class="section-tag"><b class="tag-num">02</b>Core Features</span>
           <h2 class="section-title">ฟังก์ชันครบ<br><span class="h-soft">จบทุกเรื่องเงินและงาน</span></h2>
           <p class="section-subtitle">
             ออกแบบมาเพื่อแก้ปัญหาการลืมจดเงิน การคุมงบไม่อยู่ และความวุ่นวายเวลาหารบิลกับเพื่อน
@@ -413,10 +414,10 @@
     </section>
 
     <!-- SECTION: LIFF Web App Showcase (from app-index.json) -->
-    <section class="webapp-section stack sheet sheet--mint" id="webapp">
+    <section class="webapp-section sheet sheet--mint" id="webapp">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag">LIFF Mobile Web App</span>
+          <span class="section-tag"><b class="tag-num">03</b>LIFF Mobile Web App</span>
           <h2 class="section-title">เปิดหน้าแอปบนมือถือได้ทันที<br><span class="h-soft">ไม่ต้องติดตั้งอะไรเพิ่ม</span></h2>
           <p class="section-subtitle">
             เพียงแตะเมนูในแชท LINE ระบบจะเปิดหน้าเว็บ LIFF กราฟิกคมชัด ใช้งานง่าย เต็มประสิทธิภาพ
@@ -488,10 +489,10 @@
     </section>
 
     <!-- SECTION: 5 Bot Personas (from brand.json) -->
-    <section class="personas-section stack sheet sheet--cream" id="personas">
+    <section class="personas-section sheet sheet--cream" id="personas">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag">Personalization</span>
+          <span class="section-tag"><b class="tag-num">04</b>Personalization</span>
           <h2 class="section-title">เลือกนิสัยพี่ฮูก<br><span class="h-soft">ให้เข้ากับสไตล์ของคุณ</span></h2>
           <p class="section-subtitle">
             ชอบให้บอทคุยน่ารัก ให้กำลังใจ หรือชอบฟีลเพื่อนสนิทด่าเตือนสติ? เลือกเปลี่ยนได้ตามใจ (แพ็กเกจ Pro ขึ้นไป)
@@ -576,10 +577,10 @@
     </section>
 
     <!-- SECTION: Command Cheatsheet / Explorer (from commands.json) -->
-    <section class="commands-section stack sheet sheet--white" id="commands">
+    <section class="commands-section sheet sheet--white" id="commands">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag">Commands Library</span>
+          <span class="section-tag"><b class="tag-num">05</b>Commands Library</span>
           <h2 class="section-title">คลังคำสั่งในแชท<br><span class="h-soft">พิมพ์อะไรก็ได้ผลลัพธ์</span></h2>
           <p class="section-subtitle">
             ค้นหาตัวอย่างประโยคและคำสั่งที่ใช้พิมพ์คุยกับพี่ฮูกได้ทันที
@@ -616,10 +617,10 @@
     </section>
 
     <!-- SECTION: Pricing & Plans (from plans.json & plans.md) -->
-    <section class="pricing-section stack sheet sheet--ink" id="pricing">
+    <section class="pricing-section sheet sheet--ink" id="pricing">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag">Pricing & Plans</span>
+          <span class="section-tag"><b class="tag-num">06</b>Pricing & Plans</span>
           <h2 class="section-title">ราคาคุ้มค่า<br><span class="h-soft">เริ่มต้นใช้งานได้ฟรี</span></h2>
           <p class="section-subtitle">
             เริ่มต้นใช้งานฟรีตลอดไป หรือเลือกอัปเกรดเพื่อปลดล็อกฟังก์ชันขั้นสูง ทดลองฟรี 7 วัน
@@ -746,10 +747,10 @@
     </section>
 
     <!-- SECTION: FAQ (from faq.md) -->
-    <section class="faq-section stack sheet sheet--cream" id="faq">
+    <section class="faq-section sheet sheet--cream" id="faq">
       <div class="container faq-container">
         <div class="section-header text-center">
-          <span class="section-tag">FAQ</span>
+          <span class="section-tag"><b class="tag-num">07</b>FAQ</span>
           <h2 class="section-title">คำถามที่พบบ่อย<small class="h-meta">· FAQ · Frequently Asked Questions</small></h2>
           <p class="section-subtitle">
             รวมคำตอบของข้อสงสัยยอดนิยมเกี่ยวกับพี่ฮูก
@@ -893,10 +894,10 @@
     </section>
 
     <!-- SECTION: Privacy & Security (from privacy-summary.md) -->
-    <section class="privacy-section stack sheet sheet--white" id="privacy">
+    <section class="privacy-section sheet sheet--white" id="privacy">
       <div class="container">
         <div class="privacy-box">
-          <div class="privacy-badge">🔒 Privacy & PDPA First</div>
+          <div class="privacy-badge"><b class="tag-num">08</b>🔒 Privacy & PDPA First</div>
           <h2 class="privacy-title">พี่ฮูกเห็นอะไร<br><span class="h-soft">เก็บข้อมูลอะไรบ้าง</span></h2>
           <p class="privacy-subtitle">
             เราให้ความสำคัญสูงสุดกับการปกป้องข้อมูลส่วนบุคคลและการเงินของคุณ
@@ -921,7 +922,7 @@
     </section>
 
     <!-- SECTION: Final CTA -->
-    <section class="cta-section stack sheet sheet--mint" id="start">
+    <section class="cta-section sheet sheet--mint" id="start">
       <div class="container">
         <div class="cta-card">
           <div class="cta-content">
@@ -1049,6 +1050,6 @@
   <!-- Scripts -->
   <script src="simulator.js?v=1"></script>
   <script src="app.js?v=9"></script>
-  <script src="motion.js?v=1"></script>
+  <script src="motion.js?v=2"></script>
 </body>
 </html>
