@@ -23,7 +23,28 @@ async function sha256(text) {
 const json = (data, status = 200) =>
   new Response(JSON.stringify(data), { status, headers: { 'content-type': 'application/json' } });
 
-export async function onRequestPost({ request, env }) {
+const TYPE_LABEL = { idea: '💡 เสนอฟีเจอร์', bug: '🐞 แจ้งปัญหา', other: '💬 ความคิดเห็น' };
+
+// Push a LINE message from the P'Hook OA to the admins. Skipped until both secrets are set.
+async function notifyAdmins(env, v, origin) {
+  const ids = (env.ADMIN_LINE_USER_IDS || '').split(',').map((x) => x.trim()).filter(Boolean);
+  if (!env.LINE_CHANNEL_ACCESS_TOKEN || !ids.length) return;
+  const text = [
+    `ข้อเสนอแนะใหม่ · ${TYPE_LABEL[v.type]}`,
+    '',
+    v.message,
+    v.contact ? `\nติดต่อกลับ: ${v.contact}` : '',
+    `\nดูทั้งหมด: ${origin}/admin`,
+  ].join('\n');
+  const res = await fetch('https://api.line.me/v2/bot/message/multicast', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', authorization: `Bearer ${env.LINE_CHANNEL_ACCESS_TOKEN}` },
+    body: JSON.stringify({ to: ids, messages: [{ type: 'text', text }] }),
+  });
+  if (!res.ok) console.log('LINE notify failed', res.status, await res.text());
+}
+
+export async function onRequestPost({ request, env, waitUntil }) {
   let body;
   try {
     body = await request.json();
@@ -45,5 +66,7 @@ export async function onRequestPost({ request, env }) {
   await env.DB.prepare('INSERT INTO feedback (type, message, contact, ip_hash) VALUES (?, ?, ?, ?)')
     .bind(v.type, v.message, v.contact, ipHash)
     .run();
+  // after the response, so a LINE outage never blocks or loses a submission
+  waitUntil(notifyAdmins(env, v, new URL(request.url).origin).catch((e) => console.log('LINE notify error', e)));
   return json({ ok: true });
 }

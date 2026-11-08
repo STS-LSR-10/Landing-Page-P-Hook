@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ข้อเสนอแนะ · พี่ฮูก Admin</title>
+<link rel="icon" href="favicon.png?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#12332D; --teal:#0F766E; --mint:#CCFBF1; --line:#D5E3DF; --bg:#F6F4EC; --muted:#5B6F69; --red:#C2410C; }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'IBM Plex Sans Thai', sans-serif; line-height: 1.6; }
+  h1, h2 { font-family: 'Anuphan', sans-serif; margin: 0; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px 16px 60px; }
+  header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+  header img { width: 44px; height: 44px; border-radius: 50%; }
+  header h1 { font-size: 1.35rem; flex: 1; white-space: nowrap; }
+  @media (max-width: 480px) { header h1 { font-size: 1.15rem; } header .btn { padding: 5px 9px; font-size: .85rem; } }
+  button, select, input { font: inherit; }
+  .btn { border: 1.5px solid var(--line); background: #fff; color: var(--ink); border-radius: 10px; padding: 6px 12px; cursor: pointer; }
+  .btn.primary { background: var(--teal); border-color: var(--teal); color: #fff; font-weight: 600; }
+  .login { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 24px; max-width: 420px; margin: 40px auto; display: grid; gap: 12px; }
+  .login input { border: 1.5px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .err { color: var(--red); min-height: 1.4em; margin: 0; font-size: .92rem; }
+  .bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 14px; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
+  .tab { border: 1.5px solid var(--line); background: #fff; border-radius: 999px; padding: 4px 14px; cursor: pointer; }
+  .tab[aria-pressed=true] { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .tab b { font-weight: 600; margin-left: 4px; }
+  select { border: 1.5px solid var(--line); border-radius: 10px; padding: 5px 10px; background: #fff; }
+  .item { background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--teal); border-radius: 14px; padding: 14px 16px; margin-bottom: 10px; }
+  .item.s-read { border-left-color: #94A3B8; }
+  .item.s-done { border-left-color: #CBD5E1; opacity: .75; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; font-size: .85rem; color: var(--muted); }
+  .chip { background: var(--mint); color: #0B5D4F; font-weight: 600; border-radius: 999px; padding: 1px 10px; }
+  .chip.bug { background: #FFEDD5; color: var(--red); }
+  .chip.other { background: #E0E7FF; color: #3730A3; }
+  .msg { margin: 8px 0; white-space: pre-wrap; word-break: break-word; font-size: 1.02rem; }
+  .contact { font-size: .9rem; margin: 0 0 8px; }
+  .acts { display: flex; gap: 6px; flex-wrap: wrap; }
+  .acts .btn { font-size: .85rem; padding: 3px 10px; }
+  .acts .btn[aria-pressed=true] { background: var(--mint); border-color: var(--teal); font-weight: 600; }
+  .empty { text-align: center; color: var(--muted); padding: 40px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="brand/logo.png?v=2" alt="">
+    <h1>ข้อเสนอแนะ</h1>
+    <button class="btn" id="refresh" hidden>รีเฟรช</button>
+    <button class="btn" id="logout" hidden>ออกจากระบบ</button>
+  </header>
+
+  <form class="login" id="login" hidden>
+    <h2>เข้าสู่ระบบ Admin</h2>
+    <label for="token">รหัส Admin (ค่า ADMIN_TOKEN)</label>
+    <input id="token" type="password" autocomplete="current-password" required>
+    <button class="btn primary" type="submit">เข้าสู่ระบบ</button>
+    <p class="err" id="loginErr" role="alert"></p>
+  </form>
+
+  <main id="app" hidden>
+    <div class="bar">
+      <div class="tabs" id="tabs"></div>
+      <select id="type" aria-label="ประเภท">
+        <option value="">ทุกประเภท</option>
+        <option value="idea">💡 เสนอฟีเจอร์</option>
+        <option value="bug">🐞 แจ้งปัญหา</option>
+        <option value="other">💬 ความคิดเห็น</option>
+      </select>
+    </div>
+    <p class="err" id="appErr" role="alert"></p>
+    <div id="list"></div>
+  </main>
+</div>
+<script>
+const KEY = 'phook-admin-token';
+const TYPE = { idea: '💡 เสนอฟีเจอร์', bug: '🐞 แจ้งปัญหา', other: '💬 ความคิดเห็น' };
+const STATUS = [['new', 'ใหม่'], ['read', 'อ่านแล้ว'], ['done', 'ทำแล้ว'], ['all', 'ทั้งหมด']];
+const $ = (id) => document.getElementById(id);
+let items = [];
+let view = 'new';
+
+const store = {
+  get: () => { try { return localStorage.getItem(KEY) || ''; } catch { return ''; } },
+  set: (v) => { try { v ? localStorage.setItem(KEY, v) : localStorage.removeItem(KEY); } catch {} },
+};
+
+async function api(method, body) {
+  const res = await fetch('/api/admin/feedback', {
+    method,
+    headers: { authorization: 'Bearer ' + store.get(), 'content-type': 'application/json' },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  if (res.status === 401) { showLogin('รหัสไม่ถูกต้อง'); throw new Error('unauthorized'); }
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  return res.json();
+}
+
+function showLogin(err = '') {
+  store.set('');
+  $('login').hidden = false; $('app').hidden = true; $('logout').hidden = true; $('refresh').hidden = true;
+  $('loginErr').textContent = err;
+}
+
+async function load() {
+  $('appErr').textContent = '';
+  try {
+    const data = await api('GET');
+    items = data.items;
+    $('login').hidden = true; $('app').hidden = false; $('logout').hidden = false; $('refresh').hidden = false;
+    render();
+  } catch (e) {
+    if (e.message !== 'unauthorized') $('appErr').textContent = 'โหลดไม่สำเร็จ: ' + e.message;
+  }
+}
+
+const when = (s) => new Date(s.replace(' ', 'T') + 'Z')
+  .toLocaleString('th-TH', { timeZone: 'Asia/Bangkok', dateStyle: 'medium', timeStyle: 'short' });
+
+function el(tag, cls, text) {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text != null) n.textContent = text; // user text only ever goes in as text, never as HTML
+  return n;
+}
+
+function render() {
+  const type = $('type').value;
+  const tabs = $('tabs');
+  tabs.replaceChildren(...STATUS.map(([k, label]) => {
+    const n = items.filter((i) => (k === 'all' || i.status === k) && (!type || i.type === type)).length;
+    const b = el('button', 'tab', label);
+    b.type = 'button';
+    b.setAttribute('aria-pressed', String(view === k));
+    b.append(el('b', '', String(n)));
+    b.onclick = () => { view = k; render(); };
+    return b;
+  }));
+
+  const shown = items.filter((i) => (view === 'all' || i.status === view) && (!type || i.type === type));
+  const list = $('list');
+  if (!shown.length) return list.replaceChildren(el('p', 'empty', 'ไม่มีข้อเสนอแนะในหมวดนี้'));
+  list.replaceChildren(...shown.map((i) => {
+    const card = el('article', 'item s-' + i.status);
+    const meta = el('div', 'meta');
+    meta.append(el('span', 'chip ' + i.type, TYPE[i.type] || i.type), el('span', '', when(i.created_at)), el('span', '', '#' + i.id));
+    card.append(meta, el('p', 'msg', i.message));
+    if (i.contact) card.append(el('p', 'contact', 'ติดต่อกลับ: ' + i.contact));
+    const acts = el('div', 'acts');
+    STATUS.slice(0, 3).forEach(([k, label]) => {
+      const b = el('button', 'btn', label);
+      b.type = 'button';
+      b.setAttribute('aria-pressed', String(i.status === k));
+      b.onclick = async () => {
+        const before = i.status;
+        i.status = k; render();
+        try { await api('PATCH', { id: i.id, status: k }); }
+        catch (e) { i.status = before; render(); $('appErr').textContent = 'บันทึกสถานะไม่สำเร็จ'; }
+      };
+      acts.append(b);
+    });
+    card.append(acts);
+    return card;
+  }));
+}
+
+$('login').addEventListener('submit', (e) => {
+  e.preventDefault();
+  store.set($('token').value.trim());
+  $('token').value = '';
+  load();
+});
+$('logout').onclick = () => showLogin();
+$('refresh').onclick = load;
+$('type').onchange = render;
+
+if (store.get()) load(); else showLogin();
+</script>
+</body>
+</html>

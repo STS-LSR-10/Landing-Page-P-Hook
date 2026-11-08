@@ -11,3 +11,8 @@
 
 /app/*
   Cache-Control: public, max-age=604800
+
+/admin
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+  X-Frame-Options: DENY

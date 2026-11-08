@@ -5,7 +5,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 rm -rf dist && mkdir dist
-cp index.html styles.css theme-v2.css app.js simulator.js motion.js \
+cp index.html admin.html styles.css theme-v2.css app.js simulator.js motion.js \
    favicon.ico favicon.png favicon-32.png apple-touch-icon.png _headers dist/
 cp -R brand app cards-clean dist/
 find dist -name '.DS_Store' -delete
