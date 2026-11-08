@@ -1,7 +1,7 @@
 // Guards every /api/admin/* route: needs the ADMIN_TOKEN secret as a Bearer token.
 export function authorized(request, env) {
   const token = env.ADMIN_TOKEN || '';
-  if (token.length < 16) return false; // unset or too weak: admin stays locked
+  if (token.length < 12) return false; // unset or too weak: admin stays locked
   const got = (request.headers.get('authorization') || '').replace(/^Bearer /, '');
   if (got.length !== token.length) return false;
   let diff = 0; // constant-time compare, so the token cannot be guessed char by char from timing

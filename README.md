@@ -28,17 +28,10 @@
 
 - กันสแปม: ช่องหลอกที่คนมองไม่เห็น และจำกัด 5 ข้อความต่อชั่วโมงต่อ IP (เก็บแค่ค่า hash ของ IP ไม่เก็บ IP จริง)
 - **หน้าดูข้อเสนอแนะ:** https://www.p-hook.com/admin ใส่รหัส `ADMIN_TOKEN` แล้วกรองตามสถานะ (ใหม่ / อ่านแล้ว / ทำแล้ว) และตามประเภทได้ กดเปลี่ยนสถานะได้ทันที (API อยู่ที่ `functions/api/admin/`)
-- **แจ้งเตือนทาง LINE:** ทุกครั้งที่มีข้อความใหม่ บอท @p-hook จะส่งข้อความหา Admin (ใช้ multicast ของ Messaging API นับรวมในโควตาข้อความของ OA)
-- **ตั้งค่าครั้งเดียว** (ค่าลับ ไม่อยู่ในโค้ด) รันทีละคำสั่ง แล้วใส่ค่าตอนที่ถาม จากนั้นรัน `./deploy.sh`
+- **ตั้ง/เปลี่ยนรหัส Admin:** ตั้งรหัสเองได้ ยาวอย่างน้อย 12 ตัว (สั้นกว่านี้หน้า Admin จะไม่เปิด) รันคำสั่งนี้แล้วพิมพ์รหัสตอนที่ถาม จากนั้นรัน `./deploy.sh` ให้มีผล
   ```bash
   npx wrangler pages secret put ADMIN_TOKEN --project-name p-hook
-  npx wrangler pages secret put LINE_CHANNEL_ACCESS_TOKEN --project-name p-hook
-  npx wrangler pages secret put ADMIN_LINE_USER_IDS --project-name p-hook
   ```
-  - `ADMIN_TOKEN`: รหัสเข้าหน้า Admin ยาวอย่างน้อย 16 ตัว (สุ่มได้ด้วย `openssl rand -hex 24`) สั้นกว่านี้หน้า Admin จะไม่เปิด
-  - `LINE_CHANNEL_ACCESS_TOKEN`: Channel access token ของ Messaging API channel (ตัวเดียวกับที่บอทใช้)
-  - `ADMIN_LINE_USER_IDS`: User ID ของ Admin ขึ้นต้นด้วย `U` หลายคนคั่นด้วย `,` (ดูได้ที่ LINE Developers → channel → Basic settings → Your user ID) และ Admin ต้องแอดเพื่อนบอทไว้แล้ว
-  - ยังไม่ตั้ง 2 ค่าหลัง ระบบก็ยังบันทึกข้อเสนอแนะตามปกติ แค่ไม่แจ้งเตือน
 - อ่านจากฐานข้อมูลโดยตรง:
   ```bash
   npx wrangler d1 execute p-hook-feedback --remote --command "SELECT id, created_at, type, message, contact, status FROM feedback ORDER BY id DESC LIMIT 50"
