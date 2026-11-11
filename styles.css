@@ -2710,7 +2710,21 @@ a.is-soon { opacity: .6; cursor: default; pointer-events: none; }
 
 /* 4 plans: Free / Starter / Pro / Elite */
 @media (min-width: 1025px) { .pricing-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; } }
-@media (min-width: 1025px) and (max-width: 1239px) { .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2.5rem; max-width: 900px; margin: 0 auto; } }
+/* Narrower than 4 full cards: keep one row and scroll sideways (arrows in .pricing-nav) */
+@media (max-width: 1239px) {
+  .pricing-grid {
+    grid-template-columns: repeat(4, minmax(min(290px, 80vw), 1fr)); gap: 1rem;
+    max-width: none; margin: 0 -16px; padding: 1.75rem 16px 1rem;
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 16px; scrollbar-width: thin;
+  }
+  .pricing-card { scroll-snap-align: start; }
+}
+.pricing-nav { display: none; }
+@media (max-width: 1239px) {
+  .pricing-nav { display: flex; justify-content: center; align-items: center; gap: .75rem; margin-top: .5rem; color: #fff; font-size: .85rem; }
+  .pricing-nav button { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.5); background: rgba(255,255,255,.08); color: #fff; font-size: 1.2rem; cursor: pointer; }
+  .pricing-nav button:disabled { opacity: .3; cursor: default; }
+}
 .pricing-footnote { margin: 1.75rem auto 0; max-width: 820px; text-align: center; font-size: .85rem; opacity: .8; }
 
 /* New feature card spans the whole row so the 3x2 grid stays even */

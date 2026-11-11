@@ -409,6 +409,23 @@ function initPricingToggle() {
   }
   updatePrices();
 
+  // arrows for the sideways-scrolling plan row on narrower screens
+  const grid = document.querySelector('.pricing-grid');
+  const prev = document.getElementById('pricingPrev');
+  const next = document.getElementById('pricingNext');
+  if (grid && prev && next) {
+    const step = () => grid.querySelector('.pricing-card').offsetWidth + 16;
+    const sync = () => {
+      prev.disabled = grid.scrollLeft <= 4;
+      next.disabled = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4;
+    };
+    prev.addEventListener('click', () => grid.scrollBy({ left: -step(), behavior: 'smooth' }));
+    next.addEventListener('click', () => grid.scrollBy({ left: step(), behavior: 'smooth' }));
+    grid.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
+  }
+
   if (switchBtn) {
     switchBtn.addEventListener('click', () => {
       isYearly = !isYearly;
