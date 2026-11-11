@@ -1103,6 +1103,7 @@ code {
 .plan-free { background-color: #E2E8F0; color: #475569; }
 .plan-pro { background-color: var(--primary-soft); color: var(--primary-dark); }
 .plan-elite { background-color: #EDE9FE; color: #6D28D9; }
+.plan-starter { background-color: #E0F2FE; color: #0369A1; }
 
 .feature-title {
   font-size: 1.35rem;

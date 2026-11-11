@@ -285,13 +285,13 @@ function initCommandsExplorer() {
     { group: 'เตือน โน้ต ไฟล์', type: 'ค้นหาโน้ต ไวไฟ', does: 'ค้นหาโน้ตที่เคยบันทึก', plan: 'Free' },
     { group: 'เตือน โน้ต ไฟล์', type: 'เก็บไว้ให้หน่อย', does: 'ส่งรูปหรือไฟล์เพื่อฝากเก็บเข้าคลัง', plan: 'Free' },
     { group: 'เตือน โน้ต ไฟล์', type: 'หาไฟล์ สัญญา', does: 'ค้นหาไฟล์ในคลัง', plan: 'Free' },
-    { group: 'สมุดกลุ่ม (ใช้ในกลุ่ม LINE)', type: 'เปิดสมุดกลุ่ม', does: 'เริ่มใช้สมุดบัญชีกองกลางในกลุ่ม LINE', plan: 'Elite' },
+    { group: 'สมุดกลุ่ม (ใช้ในกลุ่ม LINE)', type: 'เปิดสมุดกลุ่ม', does: 'เริ่มใช้สมุดบัญชีกองกลางในกลุ่ม LINE', plan: 'Starter' },
     { group: 'สมุดกลุ่ม (ใช้ในกลุ่ม LINE)', type: 'จด ข้าวเที่ยง 350', does: 'จดรายจ่ายในกลุ่ม', plan: 'Free' },
-    { group: 'สมุดกลุ่ม (ใช้ในกลุ่ม LINE)', type: 'หารบิล หมูกระทะ 1200', does: 'หารบิล พร้อมสร้าง QR รายคน', plan: 'Elite' },
-    { group: 'สมุดกลุ่ม (ใช้ในกลุ่ม LINE)', type: 'ตามเงิน', does: 'ส่งการ์ดทวงเงินคนที่ยังค้างจ่าย', plan: 'Elite' },
-    { group: 'สมุดกลุ่ม (ใช้ในกลุ่ม LINE)', type: 'ใครค้างบ้าง', does: 'ดูว่าใครยังค้างจ่ายบิลในกลุ่ม (เหมือน "บิลค้าง")', plan: 'Elite' },
-    { group: 'สมุดกลุ่ม (ใช้ในกลุ่ม LINE)', type: 'เริ่มทริป เชียงใหม่', does: 'เปิดกองกลางสำหรับทริปเที่ยว', plan: 'Elite' },
-    { group: 'สมุดกลุ่ม (ใช้ในกลุ่ม LINE)', type: 'สรุปทริป', does: 'คำนวณเงิน ใครโอนคืนใคร', plan: 'Elite' },
+    { group: 'สมุดกลุ่ม (ใช้ในกลุ่ม LINE)', type: 'หารบิล หมูกระทะ 1200', does: 'หารบิล พร้อมสร้าง QR รายคน', plan: 'Starter' },
+    { group: 'สมุดกลุ่ม (ใช้ในกลุ่ม LINE)', type: 'ตามเงิน', does: 'ส่งการ์ดทวงเงินคนที่ยังค้างจ่าย', plan: 'Starter' },
+    { group: 'สมุดกลุ่ม (ใช้ในกลุ่ม LINE)', type: 'ใครค้างบ้าง', does: 'ดูว่าใครยังค้างจ่ายบิลในกลุ่ม (เหมือน "บิลค้าง")', plan: 'Starter' },
+    { group: 'สมุดกลุ่ม (ใช้ในกลุ่ม LINE)', type: 'เริ่มทริป เชียงใหม่', does: 'เปิดกองกลางสำหรับทริปเที่ยว', plan: 'Starter' },
+    { group: 'สมุดกลุ่ม (ใช้ในกลุ่ม LINE)', type: 'สรุปทริป', does: 'คำนวณเงิน ใครโอนคืนใคร', plan: 'Starter' },
     { group: 'ถามพี่ฮูก', type: 'ถามพี่ฮูก', does: 'เข้าสู่โหมดคุยปรึกษาการเงินต่อเนื่อง', plan: 'Free' },
     { group: 'ถามพี่ฮูก', type: 'ฮูก เดือนนี้ใช้ไปเท่าไร', does: 'ถามคำถามด่วนรอบเดียว', plan: 'Free' },
     { group: 'ถามพี่ฮูก', type: 'ฮูก พอจะมีเงินไปเที่ยวไหม', does: 'ปรึกษาการวางแผนการเงินกับ AI', plan: 'Free' },
@@ -321,7 +321,7 @@ function initCommandsExplorer() {
     }
 
     filtered.forEach(cmd => {
-      const planClass = cmd.plan === 'Free' ? 'plan-free' : (cmd.plan === 'Pro' ? 'plan-pro' : 'plan-elite');
+      const planClass = 'plan-' + cmd.plan.toLowerCase();
       const card = document.createElement('div');
       card.className = 'cmd-card';
       card.innerHTML = `
