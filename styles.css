@@ -2711,3 +2711,22 @@ a.is-soon { opacity: .6; cursor: default; pointer-events: none; }
 @media (min-width: 1025px) { .pricing-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; } }
 @media (min-width: 1025px) and (max-width: 1239px) { .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2.5rem; max-width: 900px; margin: 0 auto; } }
 .pricing-footnote { margin: 1.75rem auto 0; max-width: 820px; text-align: center; font-size: .85rem; opacity: .8; }
+
+/* New feature card spans the whole row so the 3x2 grid stays even */
+.feature-card.feature-wide { grid-column: 1 / -1; }
+
+/* Add-on packs (under pricing, on the ink sheet) */
+.addons { margin: 3rem auto 0; max-width: 1100px; }
+.addons-title { color: #fff; font-size: 1.35rem; text-align: center; margin: 0 0 1.25rem; }
+.addons-title span { display: block; font-size: .9rem; font-weight: 500; opacity: .75; margin-top: .25rem; }
+.addon-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .75rem; }
+.addon-item { display: flex; align-items: center; gap: .75rem; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: 14px; padding: .85rem 1rem; color: #fff; }
+.addon-ico { font-size: 1.5rem; }
+.addon-item div { flex: 1; min-width: 0; }
+.addon-item strong { display: block; font-size: .95rem; }
+.addon-item small { display: block; font-size: .8rem; opacity: .75; }
+.addon-item b { text-align: right; font-size: 1.1rem; white-space: nowrap; }
+.addon-item em { display: block; font-style: normal; font-weight: 500; font-size: .7rem; opacity: .7; }
+.addons-note { text-align: center; font-size: .82rem; color: #fff; opacity: .7; margin: 1rem auto 0; max-width: 820px; }
+@media (max-width: 1024px) { .addon-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .addon-grid { grid-template-columns: 1fr; } }
