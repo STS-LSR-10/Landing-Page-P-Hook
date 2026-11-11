@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=15">
+  <link rel="stylesheet" href="styles.css?v=16">
   <link rel="stylesheet" href="theme-v2.css?v=6">
   <script>document.documentElement.classList.add('js-motion');</script>
 </head>
@@ -26,9 +26,9 @@
   <!-- Top Announcement Bar -->
   <aside class="announcement-bar" aria-label="Announcement">
     <div class="container announcement-inner">
-      <span class="badge-pill">โปรเปิดตัวพิเศษ 🚀</span>
-      <span>ลดสูงสุด <strong>40%</strong> ถึง 31 ธ.ค. 2569 พร้อมทดลองใช้ Pro & Elite ฟรี 7 วัน!</span>
-      <a href="#pricing" class="announcement-link">ดูราคาพิเศษ &rarr;</a>
+      <span class="badge-pill">Early Bird 🐣</span>
+      <span>ราคา <strong>Early Bird</strong> ที่นั่งจำกัด พร้อมทดลองใช้ฟรี 7 วัน ไม่ต้องใช้บัตร!</span>
+      <a href="#pricing" class="announcement-link">ดูราคา &rarr;</a>
     </div>
   </aside>
 
@@ -496,7 +496,7 @@
           <span class="section-tag"><b class="tag-num">04</b>Personalization</span>
           <h2 class="section-title">เลือกนิสัยพี่ฮูก<br><span class="h-soft">ให้เข้ากับสไตล์ของคุณ</span></h2>
           <p class="section-subtitle">
-            ชอบให้บอทคุยน่ารัก ให้กำลังใจ หรือชอบฟีลเพื่อนสนิทด่าเตือนสติ? เลือกเปลี่ยนได้ตามใจ (แพ็กเกจ Pro ขึ้นไป)
+            ชอบให้บอทคุยน่ารัก ให้กำลังใจ หรือชอบฟีลเพื่อนสนิทด่าเตือนสติ? เลือกเปลี่ยนได้ตามใจ (แพ็กเกจ Starter ขึ้นไป)
           </p>
         </div>
 
@@ -539,17 +539,6 @@
               </div>
             </button>
 
-            <!-- Night -->
-            <button class="persona-tab" data-persona="night">
-              <span class="persona-emoji">🦉</span>
-              <div class="persona-tab-info">
-                <div class="persona-title-row">
-                  <strong>ฮูกนอนดึก</strong>
-                  <span class="badge-special">พิเศษ</span>
-                </div>
-                <small>ขยันเตือนคนนอนดึก ตาวาวทุกรายจ่าย</small>
-              </div>
-            </button>
           </div>
 
           <!-- Persona Live Preview -->
@@ -624,7 +613,7 @@
           <span class="section-tag"><b class="tag-num">06</b>Pricing & Plans</span>
           <h2 class="section-title">ราคาคุ้มค่า<br><span class="h-soft">เริ่มต้นใช้งานได้ฟรี</span></h2>
           <p class="section-subtitle">
-            เริ่มต้นใช้งานฟรีตลอดไป หรือเลือกอัปเกรดเพื่อปลดล็อกฟังก์ชันขั้นสูง ทดลองฟรี 7 วัน
+            เริ่มต้นใช้งานฟรีตลอดไป หรือเลือกอัปเกรดเพื่อปลดล็อกฟังก์ชันขั้นสูง ทดลองฟรี 7 วัน ไม่ต้องใช้บัตร
           </p>
 
           <!-- Billing Period Switcher -->
@@ -634,14 +623,13 @@
               <span class="switch-handle"></span>
             </button>
             <span class="billing-label active" id="labelYearly">
-              รายปี <span class="discount-tag">ประหยัดสูงสุด 40% 🔥</span>
+              รายปี <span class="discount-tag">ถูกกว่ารายเดือนสูงสุด 55% 🔥</span>
             </span>
           </div>
         </div>
 
-        <!-- 3 Pricing Cards -->
+        <!-- 4 Pricing Cards (prices filled by initPricingToggle in app.js) -->
         <div class="pricing-grid">
-          <!-- Free Plan -->
           <div class="pricing-card">
             <div class="pricing-header">
               <div class="plan-badge-pill">เริ่มต้นใช้งาน</div>
@@ -657,86 +645,99 @@
               <li><span class="check-icon">✓</span> จดรายการด้วยข้อความไม่จำกัด</li>
               <li><span class="check-icon">✓</span> จัดหมวดหมู่อัตโนมัติ</li>
               <li><span class="check-icon">✓</span> สรุปวันนี้ / เดือนนี้ / สรุปหมวด</li>
-              <li><span class="check-icon">✓</span> 1 กระเป๋าเงิน (เงินสด/หลัก)</li>
+              <li><span class="check-icon">✓</span> 1 กระเป๋าเงิน</li>
               <li><span class="check-icon">✓</span> ตั้งเตือน, โน้ต, คลังไฟล์</li>
-              <li><span class="check-icon">✓</span> ทดลองส่งสลิป 3 รูป / สัปดาห์</li>
-              <li><span class="check-icon">✓</span> โควตาถามพี่ฮูก AI 200 ครั้ง / เดือน</li>
-              <li class="disabled-feature">✕ สแกนสลิปโอนเงินอัตโนมัติประจำ</li>
-              <li class="disabled-feature">✕ ตั้งงบประมาณ & เตือนเมื่อแตะ 80%</li>
-              <li class="disabled-feature">✕ สมุดกลุ่ม & หารบิลพร้อม QR</li>
+              <li><span class="check-icon">✓</span> ทดลองอ่านสลิป 10 ใบ</li>
+              <li><span class="check-icon">✓</span> ทดลองจดด้วยเสียง 10 ครั้ง</li>
+              <li class="disabled-feature">✕ ตั้งงบ & เตือนเมื่อใกล้เกินงบ</li>
+              <li class="disabled-feature">✕ กลุ่ม LINE & หารบิล</li>
             </ul>
 
             <a href="https://line.me/R/ti/p/@p-hook" class="btn btn-outline btn-block">
               เริ่มใช้งานฟรี
             </a>
           </div>
+          <div class="pricing-card" data-plan="starter">
+            <div class="pricing-header">
+              <div class="plan-badge-pill">เริ่มคุมงบ</div>
+              <h3 class="plan-name">Starter</h3>
+              <p class="plan-tagline">สำหรับคนที่อยากเริ่มตั้งงบและจดให้ครบทุกช่องทาง</p>
+              <div class="plan-price">
+                <span class="currency">฿</span><span class="price-val"></span>
+                <span class="period"></span>
+              </div>
+              <div class="original-price-note"></div>
+              <div class="trial-note">🎁 ทดลองใช้ฟรี 7 วัน ไม่ต้องใช้บัตร</div>
+            </div>
 
-          <!-- Pro Plan (Featured) -->
-          <div class="pricing-card featured-plan">
+            <ul class="plan-features">
+              <li><span class="check-icon">✓</span> <strong>ทุกอย่างใน Free และ:</strong></li>
+              <li><span class="check-icon">✓</span> <strong>อ่านสลิป 60 ใบ / เดือน</strong></li>
+              <li><span class="check-icon">✓</span> <strong>จดด้วยเสียง 30 ครั้ง / เดือน</strong></li>
+              <li><span class="check-icon">✓</span> <strong>5 กระเป๋าเงิน & 2 เป้าหมายออม</strong></li>
+              <li><span class="check-icon">✓</span> งบรายวัน / สัปดาห์ + เตือนเมื่อใกล้เกินงบ</li>
+              <li><span class="check-icon">✓</span> กลุ่ม LINE 1 กลุ่ม (5 คน)</li>
+              <li><span class="check-icon">✓</span> ส่งออก CSV / Excel & หลายสกุลเงิน</li>
+              <li><span class="check-icon">✓</span> เลือกสีการ์ด 5 ธีม & นิสัยบอท 4 แบบ</li>
+            </ul>
+
+            <a href="https://line.me/R/ti/p/@p-hook" class="btn btn-outline btn-block">
+              ทดลองใช้ Starter ฟรี 7 วัน
+            </a>
+          </div>
+          <div class="pricing-card featured-plan" data-plan="pro">
             <div class="popular-ribbon">แนะนำสำหรับทุกคน ✨</div>
             <div class="pricing-header">
               <div class="plan-badge-pill pill-featured">ยอดนิยม</div>
               <h3 class="plan-name">Pro</h3>
               <p class="plan-tagline">สำหรับคนที่ต้องการคุมการเงินอย่างจริงจังและแชร์กับแฟน</p>
-              
               <div class="plan-price">
-                <span class="currency">฿</span>
-                <span class="price-val" id="proPrice">299</span>
-                <span class="period" id="proPeriod">/ ปี (เหลือ ฿25/ด)</span>
+                <span class="currency">฿</span><span class="price-val"></span>
+                <span class="period"></span>
               </div>
-              <div class="original-price-note" id="proOriginalPrice">
-                ราคาปกติ <del>฿339/ปี</del> • โปรเปิดตัวถึงสิ้นปีนี้
-              </div>
-              <div class="trial-note">🎁 ทดลองใช้ฟรี 7 วัน ยกเลิกได้ตลอด</div>
+              <div class="original-price-note"></div>
+              <div class="trial-note">🎁 ทดลองใช้ฟรี 7 วัน ไม่ต้องใช้บัตร</div>
             </div>
 
             <ul class="plan-features">
-              <li><span class="check-icon">✓</span> <strong>ทุกอย่างใน Free และ:</strong></li>
-              <li><span class="check-icon">✓</span> <strong>อ่านรูปสลิป 30 ใบ / เดือน</strong></li>
-              <li><span class="check-icon">✓</span> <strong>จดด้วยเสียง 20 ครั้ง / เดือน</strong></li>
-              <li><span class="check-icon">✓</span> <strong>5 กระเป๋าเงิน</strong> (เงินสด, ธนาคาร, บัตร)</li>
-              <li><span class="check-icon">✓</span> <strong>กระเป๋าร่วม 2 คน</strong> (แชร์กับแฟนได้)</li>
-              <li><span class="check-icon">✓</span> ตั้งงบรวม, งบหมวด, งบวัน + เตือน 80%</li>
-              <li><span class="check-icon">✓</span> กราฟวิเคราะห์, เทียบเดือน, สรุปปี</li>
-              <li><span class="check-icon">✓</span> สร้าง 5 กระปุกเป้าหมายออมเงิน</li>
-              <li><span class="check-icon">✓</span> เปลี่ยนสีการ์ด 5 ธีม & นิสัยบอท 5 แบบ</li>
-              <li><span class="check-icon">✓</span> ส่งออกข้อมูล CSV / Excel</li>
+              <li><span class="check-icon">✓</span> <strong>ทุกอย่างใน Starter และ:</strong></li>
+              <li><span class="check-icon">✓</span> <strong>อ่านสลิป 250 ใบ / เดือน</strong></li>
+              <li><span class="check-icon">✓</span> <strong>จดด้วยเสียง 200 ครั้ง / เดือน</strong></li>
+              <li><span class="check-icon">✓</span> <strong>20 กระเป๋าเงิน & 10 เป้าหมายออม</strong></li>
+              <li><span class="check-icon">✓</span> นำเข้า PDF Statement 10 ไฟล์ / เดือน</li>
+              <li><span class="check-icon">✓</span> AI Insight + พยากรณ์เงินปลายเดือน</li>
+              <li><span class="check-icon">✓</span> เตือนจ่ายบิล</li>
+              <li><span class="check-icon">✓</span> กลุ่ม LINE 5 กลุ่ม (กลุ่มละ 10 คน)</li>
+              <li><span class="check-icon">✓</span> ส่งออก ZIP</li>
             </ul>
 
             <a href="https://line.me/R/ti/p/@p-hook" class="btn btn-primary btn-block btn-line shadow-hover">
               ทดลองใช้ Pro ฟรี 7 วัน
             </a>
           </div>
-
-          <!-- Elite Plan -->
-          <div class="pricing-card">
+          <div class="pricing-card" data-plan="elite">
             <div class="pricing-header">
               <div class="plan-badge-pill">สูงสุด ครบครัน</div>
               <h3 class="plan-name">Elite</h3>
               <p class="plan-tagline">สำหรับกลุ่มเพื่อน ครอบครัว ธุรกิจย่อม และผู้ใช้ขั้นสูง</p>
-              
               <div class="plan-price">
-                <span class="currency">฿</span>
-                <span class="price-val" id="elitePrice">699</span>
-                <span class="period" id="elitePeriod">/ ปี (เหลือ ฿58/ด)</span>
+                <span class="currency">฿</span><span class="price-val"></span>
+                <span class="period"></span>
               </div>
-              <div class="original-price-note" id="eliteOriginalPrice">
-                ราคาปกติ <del>฿799/ปี</del> • โปรเปิดตัวถึงสิ้นปีนี้
-              </div>
-              <div class="trial-note">🎁 ทดลองใช้ฟรี 7 วัน ยกเลิกได้ตลอด</div>
+              <div class="original-price-note"></div>
+              <div class="trial-note">🎁 ทดลองใช้ฟรี 7 วัน ไม่ต้องใช้บัตร</div>
             </div>
 
             <ul class="plan-features">
               <li><span class="check-icon">✓</span> <strong>ทุกอย่างใน Pro และ:</strong></li>
-              <li><span class="check-icon">✓</span> <strong>สมุดกลุ่ม LINE</strong> (หารบิล QR, สรุปทริป, ตามเงิน)</li>
-              <li><span class="check-icon">✓</span> <strong>สแกนสลิปไม่จำกัด</strong> (ตามเกณฑ์ Fair Use 300)</li>
-              <li><span class="check-icon">✓</span> <strong>จดด้วยเสียง 200 ครั้ง / เดือน</strong></li>
-              <li><span class="check-icon">✓</span> AI แยกรายการสินค้าในสลิป/ใบเสร็จได้</li>
-              <li><span class="check-icon">✓</span> กระเป๋าเงินไม่จำกัด & กระเป๋าร่วม 10 คน</li>
-              <li><span class="check-icon">✓</span> จัดการหนี้รายคน & บิลเตือนชำระรายเดือน</li>
-              <li><span class="check-icon">✓</span> AI พยากรณ์เงินปลายเดือน & วิเคราะห์เชิงลึก</li>
-              <li><span class="check-icon">✓</span> โควตาถาม AI สูงสุด 5,000 ครั้ง / เดือน</li>
-              <li><span class="check-icon">✓</span> รองรับสกุลเงินต่างประเทศ <code>1500 JPY</code></li>
+              <li><span class="check-icon">✓</span> <strong>อ่านสลิป 600 ใบ / เดือน</strong></li>
+              <li><span class="check-icon">✓</span> <strong>จดด้วยเสียง 400 ครั้ง / เดือน</strong></li>
+              <li><span class="check-icon">✓</span> <strong>กระเป๋าเงิน & เป้าหมายออมไม่จำกัด</strong></li>
+              <li><span class="check-icon">✓</span> นำเข้า PDF Statement 30 ไฟล์ / เดือน</li>
+              <li><span class="check-icon">✓</span> AI แยกรายการสินค้าจากใบเสร็จ</li>
+              <li><span class="check-icon">✓</span> พิมพ์ประโยคยาวๆ ให้ AI ช่วยอ่าน</li>
+              <li><span class="check-icon">✓</span> กลุ่ม LINE 10 กลุ่ม (กลุ่มละ 20 คน)</li>
+              <li><span class="check-icon">✓</span> ส่งออก PDF</li>
             </ul>
 
             <a href="https://line.me/R/ti/p/@p-hook" class="btn btn-outline btn-block">
@@ -744,6 +745,7 @@
             </a>
           </div>
         </div>
+        <p class="pricing-footnote">Early Bird: ที่นั่งจำกัด 1 สิทธิ์ต่อบัญชี • ทดลองใช้ฟรีได้ครั้งเดียวต่อแพ็ก • จ่ายด้วยบัตร (ต่ออายุอัตโนมัติ ยกเลิกได้ทุกเมื่อ) หรือพร้อมเพย์ QR (จ่ายครั้งเดียวต่อรอบ)</p>
       </div>
     </section>
 
@@ -788,7 +790,7 @@
               <span class="faq-chevron">▾</span>
             </button>
             <div class="faq-answer">
-              <p>แผน Free สามารถจดรายการด้วยข้อความได้ไม่จำกัด จัดหมวดหมู่อัตโนมัติ สรุปวันนี้/เดือนนี้/หมวด แก้และลบรายการล่าสุด ตั้งเตือน โน้ต คลังไฟล์ ถามพี่ฮูก AI ได้ 200 ครั้งต่อเดือน และทดลองส่งสลิปได้ 3 รูปต่อสัปดาห์</p>
+              <p>แผน Free สามารถจดรายการด้วยข้อความได้ไม่จำกัด จัดหมวดหมู่อัตโนมัติ สรุปวันนี้/เดือนนี้/หมวด แก้และลบรายการล่าสุด ตั้งเตือน โน้ต คลังไฟล์ และทดลองอ่านสลิปได้ 10 ใบ กับจดด้วยเสียงได้ 10 ครั้ง</p>
             </div>
           </div>
 
@@ -799,7 +801,7 @@
               <span class="faq-chevron">▾</span>
             </button>
             <div class="faq-answer">
-              <p>แพ็กเกจ Pro ราคาปกติ 59 บาท/เดือน (339 บาท/ปี) และ Elite 139 บาท/เดือน (799 บาท/ปี) ในช่วงเปิดตัวถึง 31 ธ.ค. 2569 มีโปรโมชันลดพิเศษเหลือ Pro 39/299 บาท และ Elite 119/699 บาท พร้อมสิทธิ์ทดลองใช้งานฟรี 7 วัน จ่ายสะดวกด้วยบัตรหรือพร้อมเพย์</p>
+              <p>มี 3 แพ็กเสียเงิน: Starter 49 บาท/เดือน (349 บาท/ปี), Pro 129 บาท/เดือน (699 บาท/ปี) และ Elite 299 บาท/เดือน (1,990 บาท/ปี) ตอนนี้มีราคา Early Bird ที่นั่งจำกัด (รายเดือนลดเฉพาะเดือนแรก รายปีลดเฉพาะปีแรก) ทุกแพ็กทดลองใช้ฟรี 7 วัน ไม่ต้องใช้บัตร (ครั้งเดียวต่อแพ็ก) จ่ายด้วยบัตร (ต่ออายุอัตโนมัติ ยกเลิกได้ทุกเมื่อ) หรือพร้อมเพย์ QR (จ่ายครั้งเดียวต่อรอบ)</p>
             </div>
           </div>
 
@@ -843,7 +845,7 @@
               <span class="faq-chevron">▾</span>
             </button>
             <div class="faq-answer">
-              <p>ได้ครับ (สำหรับแผน Pro ขึ้นไป) สามารถเลือกสีธีมการ์ดได้ 5 ธีม (เขียวมิ้นต์, ฟ้าทะเล, ชมพูพีช, ม่วงลาเวนเดอร์, ดำกลางคืน) ปรับนิสัยบอทได้ 5 สไตล์ (อบอุ่น, เพื่อนซี้, ปากแจ๋ว, จิบชา, นอนดึก) และตั้งชื่อเล่นที่คุณต้องการให้บอทเรียกได้</p>
+              <p>ได้ครับ (สำหรับแผน Starter ขึ้นไป) สามารถเลือกสีธีมการ์ดได้ 5 ธีม (เขียวมิ้นต์, ฟ้าทะเล, ชมพูพีช, ม่วงลาเวนเดอร์, ดำกลางคืน) ปรับนิสัยบอทได้ 4 สไตล์ (อบอุ่น, เพื่อนซี้, ปากแจ๋ว, จิบชา) และตั้งชื่อเล่นที่คุณต้องการให้บอทเรียกได้ ส่วนแผน Free ใช้สีมิ้นต์และน้ำเสียงกลาง</p>
             </div>
           </div>
 
@@ -872,11 +874,11 @@
           <!-- Item 11 -->
           <div class="faq-item">
             <button class="faq-question">
-              <span>ชวนเพื่อนมาใช้แล้วได้อะไร?</span>
+              <span>ฮูกคอยน์คืออะไร ชวนเพื่อนแล้วได้อะไร?</span>
               <span class="faq-chevron">▾</span>
             </button>
             <div class="faq-answer">
-              <p>ทั้งคุณและเพื่อนที่ถูกชวนจะได้รับเหรียญสะสม ซึ่งสามารถนำไปแลกเป็นวันใช้งานแพ็กเกจ Pro ได้ฟรี ยิ่งชวนมาก ยิ่งได้ใช้ฟรีนานขึ้นครับ</p>
+              <p>ได้ <strong>ฮูกคอยน์</strong> ทั้งคุณและเพื่อนคนละ 5 คอยน์ เมื่อเพื่อนจดรายการแรก (ชวนได้สูงสุด 5 คนต่อเดือน) และถ้าเพื่อนสมัครแพ็กเสียเงินครั้งแรก ทั้งสองคนได้ใช้ Pro เพิ่มอีก 30 วัน นอกจากนี้ยังสะสมคอยน์ได้จากการจดทุกวัน (+1 วันละครั้ง, จดครบ 7 วันติด +3, ครบ 30 วันติด +15) แล้วนำไปแลกเป็น Pro Pass: 35 คอยน์ = 3 วัน, 75 คอยน์ = 7 วัน, 150 คอยน์ = 15 วัน พิมพ์ "ฮูกคอยน์" ในแชทเพื่อดูยอด (คอยน์ไม่มีมูลค่าเป็นเงินสด)</p>
             </div>
           </div>
         </div>
@@ -967,7 +969,7 @@
               </button>
             </div>
             <div class="cta-sub">
-              <span>🎁 ทดลองใช้ Pro & Elite ฟรี 7 วัน • ยกเลิกได้ตลอดเวลา</span>
+              <span>🎁 ทดลองใช้ฟรี 7 วัน ไม่ต้องใช้บัตร • ยกเลิกได้ตลอดเวลา</span>
             </div>
           </div>
           <div class="cta-mascot">
@@ -1054,7 +1056,7 @@
         <h4>ข้อมูล & แพ็กเกจ</h4>
         <a href="#pricing">แผน Free / Pro / Elite</a>
         <a href="#commands">คู่มือคำสั่งในแชท</a>
-        <a href="#personas">นิสัยบอท 5 แบบ</a>
+        <a href="#personas">นิสัยบอท 4 แบบ</a>
         <a href="#faq">คำถามที่พบบ่อย</a>
         <a href="#privacy">ความเป็นส่วนตัว (PDPA)</a>
       </div>
@@ -1076,7 +1078,7 @@
 
   <!-- Scripts -->
   <script src="simulator.js?v=1"></script>
-  <script src="app.js?v=11"></script>
+  <script src="app.js?v=12"></script>
   <script src="motion.js?v=2"></script>
 </body>
 </html>

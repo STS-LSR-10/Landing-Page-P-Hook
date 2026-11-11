@@ -2706,3 +2706,8 @@ a.is-soon { opacity: .6; cursor: default; pointer-events: none; }
 .fb-status { margin: 0; font-size: .9rem; min-height: 1.2em; }
 .fb-status.ok { color: #0B8A55; } .fb-status.err { color: #C2410C; }
 @media (max-width: 640px) { .feedback-card .support-bar-info { flex-direction: row; } .fb-row { flex-direction: column; } .fb-row .btn { width: 100%; justify-content: center; } }
+
+/* 4 plans: Free / Starter / Pro / Elite */
+@media (min-width: 1025px) { .pricing-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; } }
+@media (min-width: 1025px) and (max-width: 1239px) { .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2.5rem; max-width: 900px; margin: 0 auto; } }
+.pricing-footnote { margin: 1.75rem auto 0; max-width: 820px; text-align: center; font-size: .85rem; opacity: .8; }

@@ -206,13 +206,6 @@ function initPersonas() {
       sample: 'ได้ครับ นึกว่าจะผลัดเป็นเดือนหน้าซะแล้วนะเนี่ย... บันทึกเรียบร้อยครับ หวังว่างวดหน้าจะไม่เกินงบอีกนะครับ',
       desc: 'ท่าทีสุขุม ผู้ดีทุกกระเบียดนิ้ว แต่คำพูดแอบเหน็บเบาๆ ให้สะดุ้ง ตอกย้ำวินัยการเงินแบบมีชั้นเชิง',
       simText: '🫖 โหมดนกฮูกจิบชา'
-    },
-    'night': {
-      emoji: '🦉',
-      name: 'ฮูกนอนดึก (พิเศษ!)',
-      sample: 'ดึกป่านนี้ยังไม่นอนอีกนะ! ตีสองยังสั่งเดลิเวอรี่ ตาจะค้างแข่งกับพี่ฮูกเหรอ รีบกดจ่ายแล้วนอนได้แล้ว!',
-      desc: 'ขยันเตือนคนนอนดึกและชอบช้อปปิ้งยามวิกาล จ้องจับผิดรายจ่ายเก่ง ตาวาวทุกการเคลื่อนไหวของกระเป๋าตังค์',
-      simText: '🦉 โหมดฮูกนอนดึก'
     }
   };
 
@@ -386,43 +379,30 @@ function initPricingToggle() {
   const labelMonthly = document.getElementById('labelMonthly');
   const labelYearly = document.getElementById('labelYearly');
 
-  const proPrice = document.getElementById('proPrice');
-  const proPeriod = document.getElementById('proPeriod');
-  const proOriginalPrice = document.getElementById('proOriginalPrice');
-
-  const elitePrice = document.getElementById('elitePrice');
-  const elitePeriod = document.getElementById('elitePeriod');
-  const eliteOriginalPrice = document.getElementById('eliteOriginalPrice');
+  // [Early Bird, regular] in baht, from phook-changes-since-landing-assets.md (11 พ.ย. 2569)
+  const PRICES = {
+    starter: { month: [29, 49], year: [199, 349] },
+    pro: { month: [89, 129], year: [499, 699] },
+    elite: { month: [199, 299], year: [1490, 1990] },
+  };
+  const baht = (n) => n.toLocaleString('en-US');
 
   let isYearly = true; // Default Yearly
 
   function updatePrices() {
-    if (isYearly) {
-      switchBtn.setAttribute('aria-checked', 'true');
-      labelYearly.classList.add('active');
-      labelMonthly.classList.remove('active');
-
-      if (proPrice) proPrice.textContent = '299';
-      if (proPeriod) proPeriod.textContent = '/ ปี (เหลือ ฿25/ด)';
-      if (proOriginalPrice) proOriginalPrice.innerHTML = 'ราคาปกติ <del>฿339/ปี</del> • โปรเปิดตัวถึง 31 ธ.ค. 2569';
-
-      if (elitePrice) elitePrice.textContent = '699';
-      if (elitePeriod) elitePeriod.textContent = '/ ปี (เหลือ ฿58/ด)';
-      if (eliteOriginalPrice) eliteOriginalPrice.innerHTML = 'ราคาปกติ <del>฿799/ปี</del> • โปรเปิดตัวถึง 31 ธ.ค. 2569';
-    } else {
-      switchBtn.setAttribute('aria-checked', 'false');
-      labelMonthly.classList.add('active');
-      labelYearly.classList.remove('active');
-
-      if (proPrice) proPrice.textContent = '39';
-      if (proPeriod) proPeriod.textContent = '/ เดือน';
-      if (proOriginalPrice) proOriginalPrice.innerHTML = 'ราคาปกติ <del>฿59/เดือน</del> • โปรเปิดตัวถึง 31 ธ.ค. 2569';
-
-      if (elitePrice) elitePrice.textContent = '119';
-      if (elitePeriod) elitePeriod.textContent = '/ เดือน';
-      if (eliteOriginalPrice) eliteOriginalPrice.innerHTML = 'ราคาปกติ <del>฿139/เดือน</del> • โปรเปิดตัวถึง 31 ธ.ค. 2569';
-    }
+    switchBtn.setAttribute('aria-checked', String(isYearly));
+    labelYearly.classList.toggle('active', isYearly);
+    labelMonthly.classList.toggle('active', !isYearly);
+    document.querySelectorAll('.pricing-card[data-plan]').forEach((card) => {
+      const [early, regular] = PRICES[card.dataset.plan][isYearly ? 'year' : 'month'];
+      card.querySelector('.price-val').textContent = baht(early);
+      card.querySelector('.period').textContent = isYearly ? '/ ปีแรก' : '/ เดือนแรก';
+      card.querySelector('.original-price-note').textContent = isYearly
+        ? `Early Bird • เฉลี่ย ฿${Math.round(early / 12)}/เดือน • ปีถัดไป ฿${baht(regular)}/ปี`
+        : `Early Bird • เดือนถัดไป ฿${baht(regular)}/เดือน`;
+    });
   }
+  updatePrices();
 
   if (switchBtn) {
     switchBtn.addEventListener('click', () => {
