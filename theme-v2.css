@@ -310,3 +310,6 @@ mark.hl {
   .js-motion [data-reveal] { opacity: 1; }
   .slip { transform: none; transition: none; }
 }
+
+/* Keep a short subtitle on one line when there is room for it */
+@media (min-width: 1100px) { .section-subtitle.one-line { max-width: none; white-space: nowrap; } }
